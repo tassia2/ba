@@ -1,0 +1,18 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}How to use the tutorial?}{3}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Using HiFlow$^3$ as a Library}{3}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Using HiFlow$^3$ as a Developer}{3}{subsubsection.1.1.2}
+\contentsline {section}{\numberline {2}Mathematical Setup}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Problem}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Exact and Inexact Newton Methods}{4}{subsection.2.2}
+\contentsline {section}{\numberline {3}The Commented Program}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Preliminaries}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Parameter File}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Main Function}{7}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Member Functions}{8}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}prepare()}{8}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}run()}{10}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}Numerical Tests}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Test Parameters}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Results}{11}{subsection.4.2}

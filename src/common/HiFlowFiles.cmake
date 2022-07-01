@@ -1,0 +1,43 @@
+set(common_SOURCES
+  bbox.cc
+  bsphere.cc
+  grid.cc
+  log.cc
+  table.cc
+  timer.cc
+  property_tree.cc
+  iterate_control.cc
+  parcom.cc
+  static_string.cc
+)
+
+set(common_PUBLIC_HEADERS
+  bbox.h
+  bsphere.h
+  binary_io.h
+  array_tools.h
+  grid.h
+  hierarchical_report.h
+  hdf5_tools.h
+  log.h
+  macros.h
+  permutation.h
+  pointers.h
+  smart_pointers.h
+  sorted_array.h
+  table.h
+  tensor.h
+  timer.h
+  vector_algebra.h
+  property_tree.h
+  iterate_control.h
+  ioassistant.h
+  csv_writer.h
+  parcom.h
+  static_string.h
+  simd_types.h
+  simd_functions.h
+  simd_vector.h
+  simd_matrix.h
+  vector_algebra_descriptor.h
+)

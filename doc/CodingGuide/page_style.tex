@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\paperheight}{29.7cm}
+\setlength{\paperwidth}{21.03cm}
+\setlength{\textwidth}{15cm}	% new 
+\setlength{\textheight}{23.5cm}	% new
+\setlength{\oddsidemargin}{1.061cm}
+ 
+\setlength{\topmargin}{0cm}
+\setlength{\headheight}{0cm}
+
+%\pagestyle{headings}
+
+%\usepackage{scrlayer-scrpage}
+%\automark[subsection]{section}
+%\pagestyle{scrheadings}
+%\clearscrheadfoot
+%\ohead{  \ifstr{\rightbotmark}{\leftmark}{}{\rightbotmark}}
+%\ihead{\leftmark}
+%\rohead*{\pagemark}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancyhead{}
+%\fancyhead[LE,RO]{\thepage}
+%\fancyhead[LO,RE]{\nouppercase{\leftmark}}
+\fancyhead[C]{\nouppercase{\leftmark}}
+
+
+%\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{changemargin}[2]{% 
+\begin{list}{}{% 
+\setlength{\topsep}{0pt}%  
+\setlength{\leftmargin}{#1}% 
+\setlength{\rightmargin}{#2}%    
+\setlength{\listparindent}{\parindent }%   
+\setlength{\itemindent}{\parindent}%   
+\setlength{\parsep}{\parskip}%  
+}% 
+\item[]}{\end{list}} 
+%\addtolength{\oddsidemargin}{-1.0cm}       
+%\addtolength{\evensidemargin}{-1.0cm}  
+%\addtolength{\textwidth }{2cm}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

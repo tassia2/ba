@@ -1,0 +1,10 @@
+Timestep, Iterations (Newton), Time to compute time-step [s], Time to compute residuals [s], Time to compute Jacobians and setup preconditioner [s], (Total) Number of GMRES iterations per time-step
+1, 4, 12.7086, 0.584742, 0.747163, 16
+1, 4, 12.6933, 0.579708, 0.732849, 16
+1, 4, 12.9213, 0.583388, 0.740844, 16
+1, 4, 14.4004, 0.578166, 0.757901, 16
+1, 4, 15.0132, 0.580786, 0.740934, 16
+1, 4, 15.1521, 0.603073, 0.767524, 16
+1, 4, 18.3147, 0.580343, 0.768138, 18
+1, 4, 19.5186, 0.575995, 0.734049, 18
+1, 4, 19.6017, 0.595015, 0.734655, 18

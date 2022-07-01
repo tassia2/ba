@@ -1,0 +1,4 @@
+- download gmsh.zip
+- extract zip file
+- copy gmsh/bin/gmsh into this directory
+- run python3 create_channel_mesh.py

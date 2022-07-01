@@ -1,0 +1,24 @@
+set(assembly_SOURCES
+  global_assembler_deprecated.cc
+  assembly_utils.cc
+  dg_assembly_deprecated.cc
+  quadrature_selection.cc
+  )
+
+set(assembly_PUBLIC_HEADERS
+  assembly_types.h
+  assembly_assistant_values.h
+  assembly_assistant.h
+  assembly_utils.h
+  assembly_routines.h
+  assembly_routines_deprecated.h
+  dg_assembly_assistant.h
+  dg_assembly_deprecated.h
+  function_values.h
+  generic_assembly_algorithm.h
+  global_assembler_deprecated.h
+  hp_assembly_deprecated.h
+  quadrature_selection.h
+  standard_assembly_deprecated.h
+  all_assembly.h
+  )

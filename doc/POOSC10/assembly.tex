@@ -1,0 +1,124 @@
+\section{Assembly Tools}
+\label{sec:assembly}
+The assembly tools in \hiflow{} combine the functionality in the Mesh,
+DoF/FEM and Linear Algebra modules, to provide a mechanism that
+efficiently produces the global system matrix and right-hand-side
+vector. As is common in finite element literature, the global assembly
+algorithm is element-oriented, with an outer iteration over the cells
+in the mesh that performs a local assembly on each cell
+separately. This section first describes the global assembly
+algorithm, which is independent of the PDE, and then
+explains how the local assembly can be implemented based on the
+variational formulation of the PDE.
+
+\subsection{Global Assembly}
+The global assembly algorithm is quite simple, consisting of a loop
+over all cells, the computation of the element matrix or vector by the
+local assembly, and finally an addition of the result into the global
+matrix or vector.
+
+In order to enable optimizations in the local
+assembly, the order of iteration of the cells is according to their
+type and the polynomial degree of the associated element. This
+minimizes the number of times the local basis functions and their
+gradients must be evaluated on the reference element.
+
+The local assembly is defined through a user-defined class, on which
+the global assembly functions are templated. Inside the loop over the
+cells, the global assembly functions first call the function
+\code{initialize\_for\_element}, passing the element information and
+quadrature object as parameters. The local matrix or vector is then
+computed with a call to \code{assemble\_local\_matrix} or
+\code{assemble\_local\_vector}, respectively.
+
+The addition of the local element matrix or vector into the
+corresponding global object uses the DoF numbering established by the
+DoF/FEM module. This numbering is also used to compute the graph of
+the global matrix, which is needed for the initialization of the
+sparsity structure of this object. The function which does this has
+the same structure as the global assembly, and is therefore also a
+part of the assembly tools.
+
+% Dealing with the finite element method, each value of a shape function on 
+% a degree of freedom needs to be computed and stored in a matrix representing
+% the system described by the partial differential equations. To assemble this
+% matrix, one needs to consider the variational formulation of a problem,
+% which then is evaluated in a first step just on a reference cell and after
+% this is transformed into the physical domain. Hence, the task of assembly is
+% divided into two parts, namely "global assembly" and "local assembly". This
+% subsection deals with the first part.
+
+% Given the information the DoF / FEM module provides, a correspondence between
+% reference and physical cell can be established. Therefore, within the global
+% assembly, one first needs to iterate over the cells of the mesh (for each
+% variable) and do the local assembly on each cell. By the correspondence
+% between local and global cell, the next step is to store the local matrix
+% at the correct places within the global matrix. Basically, one could say the
+% task of global assembly is to manage the local assembly. This routine is not
+% meant to be modified by the user. Controlling the assembly procedure from
+% the users point of view should be done within the local assembly, which
+% will be described next.
+
+\subsection{Local Assembly}
+The task of the local assembly is to compute the local element
+matrices and vectors. The local assembly is where the variational
+formulation of the PDE comes into play. In \hiflow{}, a strategy similar
+to that of deal.II \cite{BHK07} is followed, where the user of the
+library is responsible for choosing a variational formulation, and
+implementing the corresponding local assembler functions in a class,
+which we will hereafter call \code{LocalAssembler}, although the
+name can be freely chosen in the code. This is in contrast to the approach
+described in \cite{AlnaesLoggEtAl2009a}, where a separate language,
+UFC, is used to describe the variational formulation. The UFC code is
+then compiled to a target language, e.g. C++, and can thereafter be
+included in the finite element program. The advantage of such an approach
+is a simplified syntax for users of the library, and a potential for
+interoperability between finite element libraries. The drawback is, as
+with any abstraction layer, that the user has less control over the
+code, which could lead to performance penalties.
+
+\hiflow{} supports the user in the creation of the local assembler
+through a helper class, which provides a large part of the necessary
+functionality. The helper class computes and caches the values of
+the local shape functions and their gradients on the reference element
+as well as transformed to the physical element. It provides the
+information related to the current quadrature rule, and the cell
+transformation. Furthermore, it aids in the evaluation of existing
+finite element functions defined through coefficient vectors, which is
+useful for nonlinear and time-dependent problems. Support for assembly
+over facets is also being developed, which is needed e.g.  for
+inhomogeneous Neumann boundary conditions.  The helper class works
+without user interference on meshes with mixed cell types, varying polynomial
+degrees and hanging nodes.
+
+In order to illustrate the construction of a local assembler, Listing
+\ref{assembly:laplace} shows C++ code for the Poisson equation
+\begin{displaymath}
+  - \Delta{}u = x + y
+\end{displaymath}
+with variational formulation 
+\begin{displaymath}
+  \int_{\Omega}{\nabla{}u\cdot\nabla{}v{}\textrm{d}\vec{x}} = \int_{\Omega}{(x + y)v{}\textrm{d}\vec{x}}
+\end{displaymath}
+
+\lstinputlisting[language=C++, label=assembly:laplace, caption=Local assembler for the Poisson problem]{laplace_assembly.cc}
+
+As illustrated in this code, the helper class \code{AssemblyAssistant}
+provides most of the functions needed for the assembly. The user
+implements the computation of the local matrix and vector in the
+functions \code{assemble\_local\_matrix()} and
+\code{assemble\_local\_vector()}, respectively. In this case, the
+implementation uses the \code{AssemblyAssistant} class to obtain the
+values of the local shape functions and their gradients \code{phi()} and
+\code{grad\_phi()}, at the quadrature points of the current quadrature 
+rule transformed to the physical element. The function
+\code{dof\_index()} provides the position in the matrix or index where
+the degrees of freedom corresponding to a given variable (in this case
+variable $0$) should be inserted. \code{w(q)} gives the weight
+associated with quadrature point \code{q} in the quadrature rule, and
+\code{detJ(q)} gives the Jacobian of the element transformation at
+that point. The local vector assembly illustrates the use of a
+user-defined function \code{my\_f()}, which is evaluated at the point
+\code{x(q)} on the physical cell that corresponds to quadrature point
+\code{q}. More complex settings, with different models coupled to each
+other, can be also be handled in this framework.

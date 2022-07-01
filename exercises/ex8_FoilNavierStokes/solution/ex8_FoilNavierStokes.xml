@@ -1,0 +1,53 @@
+<Param>
+  <Mesh>
+    <Filename2>channel.inp</Filename2>
+    <Filename3>unit_cube.inp</Filename3>
+    <InitialRefLevel>0</InitialRefLevel>
+    <FinalRefLevel>0</FinalRefLevel>
+  </Mesh>
+  <FESpace>
+    <VelocityDegree>2</VelocityDegree>
+    <PressureDegree>1</PressureDegree>
+  </FESpace>
+  <Equation>
+    <nu>1e-1</nu>
+    <Fz>-1</Fz>
+    <InflowVelocityX>1.</InflowVelocityX>
+    <MaterialNumbers>
+        <Inflow>22</Inflow>     <!-- inflow bc on left half circle -->
+        <Outflow>21</Outflow>   <!-- free bc on right bdy -->
+        <SlipX>11</SlipX>       <!-- top / bottom (add / remove '-' to switch between SlipX and NoSlip BC on top and bottom bdy --> 
+        <NoSlip>-11</NoSlip>    <!-- top / bottom (add / remove '-' to switch between SlipX and NoSlip BC on top and bottom bdy -->
+        <Foil1>9</Foil1>         <!-- no slip on obstacle -->
+        <Foil2>10</Foil2>         <!-- no slip on obstacle -->
+    </MaterialNumbers>
+    <PressureZeroAverage>0</PressureZeroAverage>
+  </Equation>
+  <TimeStepping>
+    <T>0.05</T>
+    <dt>0.005</dt>
+    <theta>1.0</theta>
+  </TimeStepping>
+  <NonlinearSolver>
+    <MaximumIterations>5</MaximumIterations>
+    <AbsoluteTolerance>1.e-10</AbsoluteTolerance>
+    <RelativeTolerance>1.e-6</RelativeTolerance>
+    <DivergenceLimit>1.e6</DivergenceLimit>
+    <MaxArmijoIteration>2</MaxArmijoIteration>
+    <ForcingStrategy>EisenstatWalker1</ForcingStrategy>
+    <ConstantForcingTerm>1.e-4</ConstantForcingTerm>
+    <InitialValueForcingTerm>1.e-3</InitialValueForcingTerm>
+    <MaxValueForcingTerm>1.e-2</MaxValueForcingTerm>
+    <GammaParameterEW2>0.9</GammaParameterEW2>
+    <AlphaParameterEW2>2</AlphaParameterEW2>
+  </NonlinearSolver>
+  <LinearSolver>
+    <Name>GMRES</Name>
+    <SizeBasis>200</SizeBasis>
+    <Method>RightPreconditioning</Method>
+    <MaxIterations>1000</MaxIterations>
+    <AbsTolerance>1.0e-15</AbsTolerance>
+    <RelTolerance>1.0e-10</RelTolerance>
+    <DivTolerance>1.0e6</DivTolerance>
+  </LinearSolver>
+</Param>

@@ -1,0 +1,15 @@
+\section{Class Design}
+\subsection{Constructors, destructors}
+\begin{enumerate}
+\item Don't use non-virtual destructors in base classes
+\item Don't use virtual functions in constructors of base classes
+\end{enumerate}
+\subsection{Public, protected, private}
+\begin{enumerate}
+\item data members should be private (also not protected)
+\end{enumerate}
+\subsection{Inheritance}
+\begin{enumerate}
+\item In almost all cases, public inheritance is the way to go
+\item Use virtual inheritance only, if multiple inheritance is used
+\end{enumerate}

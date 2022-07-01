@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="932.93512"
+   height="241.118"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="Zeichnung_Kanal_en.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.1">
+  <defs
+     id="defs4">
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4021"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4017"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4013"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4009"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4005"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3217"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend"
+       style="overflow:visible">
+      <path
+         id="path3173"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         id="path3170"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2939"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2992"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3067"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3138"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3209"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.77068596"
+     inkscape:cx="466.46756"
+     inkscape:cy="120.559"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1680"
+     inkscape:window-height="975"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2383"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(114.36467,-239.69249)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect2385"
+       width="649.32983"
+       height="163.80554"
+       x="41.245998"
+       y="265.34055"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <image
+       sodipodi:absref="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Gamma_0.tiff"
+       xlink:href="Gamma_0.tiff"
+       inkscape:export-ydpi="316"
+       inkscape:export-xdpi="316"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       width="25.053345"
+       height="23.611427"
+       id="image3000"
+       x="129.68028"
+       y="308.85355" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3157"
+       width="38.652691"
+       height="38.652691"
+       x="101.34731"
+       y="331.14642"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+       d="m 120.55954,269.84074 -0.1828,34.60312 0,22.27058"
+       id="path3159"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.98574626;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+       d="m 156.87628,334.98282 c 0,29.89735 0,32.1134 0,32.1134"
+       id="path4462"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+       d="m 120.83759,374.42109 c 0.3656,44.5609 0.54349,50.17263 0.54349,50.17263"
+       id="path5508"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+       d="m 45.375668,350.93101 c 51.091122,0 51.091122,0 51.091122,0"
+       id="path6552"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+       d="m 43.87397,462.36218 c 638.01494,0 644.02173,0.37542 644.02173,0.37542"
+       id="path7596"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow1Mend)"
+       d="M 30,267.91254 C 29.846253,422.36218 29.846253,426.15401 29.846253,426.15401"
+       id="path8644"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <text
+       id="text11255"
+       y="302.91653"
+       x="143.29422"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         y="302.91653"
+         x="143.29422"
+         id="tspan11257"
+         sodipodi:role="line">0.16m</tspan></text>
+    <text
+       id="text11259"
+       y="355.25003"
+       x="180.91019"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         y="355.25003"
+         x="180.91019"
+         id="tspan11261"
+         sodipodi:role="line">0.1m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="144.72617"
+       y="404.24973"
+       id="text11267"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         sodipodi:role="line"
+         id="tspan11269"
+         x="144.72617"
+         y="404.24973">0.15m</tspan></text>
+    <rect
+       style="fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect11275"
+       width="8.6347647"
+       height="0"
+       x="63.446751"
+       y="329.8576" />
+    <text
+       id="text11277"
+       y="341.48898"
+       x="71.330666"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         y="341.48898"
+         x="71.330666"
+         id="tspan11279"
+         sodipodi:role="line">0.15m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="-2.8221054"
+       y="320.69543"
+       id="text11283"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         sodipodi:role="line"
+         id="tspan11285"
+         x="-2.8221054"
+         y="320.69543">h=0.41m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="332.32489"
+       y="480.81049"
+       id="text11287"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         sodipodi:role="line"
+         id="tspan11289"
+         x="332.32489"
+         y="480.81049"
+         style="font-size:12px">2.2m</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="-44.834393"
+       y="350.00174"
+       id="text11291"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         sodipodi:role="line"
+         id="tspan11293"
+         x="-44.834393"
+         y="350.00174">inflow condition</tspan><tspan
+         sodipodi:role="line"
+         x="-44.834393"
+         y="372.50174"
+         id="tspan11307" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       x="761.28333"
+       y="345.29144"
+       id="text11295"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         sodipodi:role="line"
+         id="tspan11297"
+         x="761.28333"
+         y="345.29144">outflow:</tspan><tspan
+         sodipodi:role="line"
+         x="764.14856"
+         y="367.79144"
+         id="tspan11309">&quot;do-nothing&quot; </tspan><tspan
+         sodipodi:role="line"
+         x="761.28333"
+         y="390.29144"
+         id="tspan11311">condition</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans;writing-mode:lr;line-height:125%"
+       x="324.07571"
+       y="253.36827"
+       id="text11299"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2998">boundary with no-slip condition</tspan></text>
+    <text
+       id="text11303"
+       y="450.17059"
+       x="326.43262"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316"><tspan
+         y="450.17059"
+         x="328.92871"
+         id="tspan11305"
+         sodipodi:role="line">boundary with no-slip condition</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2509"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"><flowRegion
+         id="flowRegion2511"><rect
+           id="rect2513"
+           width="1007.3793"
+           height="305.40994"
+           x="-150.33745"
+           y="204.79039" /></flowRegion><flowPara
+         id="flowPara2515" /></flowRoot>    <image
+       sodipodi:absref="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Gamma_0.tiff"
+       xlink:href="Gamma_0.tiff"
+       inkscape:export-ydpi="316"
+       inkscape:export-xdpi="316"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       width="25.053345"
+       height="23.611427"
+       id="image2994"
+       x="343.4733"
+       y="272.1759" />
+    <image
+       sodipodi:absref="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Gamma_0.tiff"
+       xlink:href="Gamma_0.tiff"
+       inkscape:export-ydpi="316"
+       inkscape:export-xdpi="316"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       y="399.40665"
+       x="348.49557"
+       id="image2998"
+       height="23.611427"
+       width="25.053345" />
+    <image
+       sodipodi:absref="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Gamma_in.tiff"
+       xlink:href="Gamma_in.tiff"
+       inkscape:export-ydpi="316"
+       inkscape:export-xdpi="316"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       width="28.418867"
+       height="23.500216"
+       id="image3069"
+       x="43.68182"
+       y="376.13235" />
+    <image
+       sodipodi:absref="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Gamma_out.tiff"
+       xlink:href="Gamma_out.tiff"
+       inkscape:export-ydpi="316"
+       inkscape:export-xdpi="316"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       width="36.884007"
+       height="23.184233"
+       id="image3140"
+       x="646.97626"
+       y="310.17996" />
+    <image
+       sodipodi:absref="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Omega.tiff"
+       xlink:href="Omega.tiff"
+       inkscape:export-ydpi="316"
+       inkscape:export-xdpi="316"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       width="27.173615"
+       height="26.458519"
+       id="image3211"
+       x="407.03296"
+       y="334.9097" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.93478417px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 21.172194,264.5571 6.582846,0 10.971407,0"
+       id="path3215"
+       inkscape:path-effect="#path-effect3217"
+       inkscape:original-d="m 21.172194,264.5571 6.582846,0 10.971407,0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:original-d="m 21.172194,429.54358 6.582846,0 10.971407,0"
+       inkscape:path-effect="#path-effect4005"
+       id="path4003"
+       d="m 21.172194,429.54358 6.582846,0 10.971407,0"
+       style="fill:none;stroke:#000000;stroke-width:0.93478417px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 40.603156,469.77416 0,-14.30317 0,-23.8386"
+       id="path4007"
+       inkscape:path-effect="#path-effect4009"
+       inkscape:original-d="m 40.603156,469.77416 0,-14.30317 0,-23.8386"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:original-d="m 691.07899,469.62619 0,-14.30317 0,-23.8386"
+       inkscape:path-effect="#path-effect4013"
+       id="path4011"
+       d="m 691.07899,469.62619 0,-14.30317 0,-23.8386"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.0102874px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 142.88203,370.65155 7.6892,0 12.81532,0"
+       id="path4015"
+       inkscape:path-effect="#path-effect4017"
+       inkscape:original-d="m 142.88203,370.65155 7.6892,0 12.81532,0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:original-d="m 142.43812,330.99561 7.6892,0 12.81532,0"
+       inkscape:path-effect="#path-effect4021"
+       id="path4019"
+       d="m 142.43812,330.99561 7.6892,0 12.81532,0"
+       style="fill:none;stroke:#000000;stroke-width:1.0102874px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/u12/Software/HiFlow3/hiflow/doc/tutorials/flow/fig/Zeichnung_Kanal_en.png"
+       inkscape:export-xdpi="316"
+       inkscape:export-ydpi="316" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3000"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Bitstream Vera Sans;font-style:normal;font-weight:normal;font-size:26"><flowRegion
+         id="flowRegion3002"><rect
+           id="rect3004"
+           width="1235.2632"
+           height="441.16544"
+           x="-90.828178"
+           y="-93.648712" /></flowRegion><flowPara
+         id="flowPara3006"></flowPara></flowRoot>  </g>
+</svg>

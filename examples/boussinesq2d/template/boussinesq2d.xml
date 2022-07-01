@@ -1,0 +1,83 @@
+<Param>
+    <OutputPrefix>ChannelBenchmark</OutputPrefix>
+    <Mesh>
+        <Filename1>unit_square_boussinesq.inp</Filename1>
+        <InitialRefLevel>6</InitialRefLevel>
+    </Mesh>
+    <UseBoundaryDomainDescriptor>0</UseBoundaryDomainDescriptor>
+    <LinearAlgebra>
+        <Platform>CPU</Platform>
+        <Implementation>Naive</Implementation>
+        <MatrixFormat>CSR</MatrixFormat>
+    </LinearAlgebra>
+    <FlowModel>
+        <HotTemperature>1</HotTemperature>  <!-- bei dimless '+1' -->
+        <ColdTemperature>-1</ColdTemperature>  <!-- bei dimless '-1' -->
+        <PrandtlNumber>param1</PrandtlNumber> <!-- 6.993 -->
+        <RayleighNumber>param2</RayleighNumber> <!-- 1.42e5 -->
+        <Dimensionless>1</Dimensionless>
+        <Density>1.</Density>
+    </FlowModel>
+    <DFGbenchmark>0</DFGbenchmark>
+    <BenchQuantities>0</BenchQuantities>
+    <QuadratureOrder>6</QuadratureOrder>
+    <FiniteElements>
+        <VelocityDegree>2</VelocityDegree>
+        <PressureDegree>1</PressureDegree>
+            <TemperatureDegree>1</TemperatureDegree>
+    </FiniteElements>
+    <Instationary>
+        <SolveInstationary>1</SolveInstationary>
+        <Method>CrankNicolson</Method>
+        <Timestep>0.05</Timestep><!-- 0.05 -->
+        <Endtime>8</Endtime><!-- 8 -->
+    </Instationary>
+    <Boundary>
+        <LeftBdy>18</LeftBdy>
+        <RightBdy>16</RightBdy>
+        <TopBdy>17</TopBdy>
+        <BottomBdy>15</BottomBdy>
+    </Boundary>
+    <NonlinearSolver>
+        <UseHiFlowNewton>1</UseHiFlowNewton>
+        <MaximumIterations>20</MaximumIterations>
+        <AbsoluteTolerance>1.e-15</AbsoluteTolerance>
+        <RelativeTolerance>1.e-15</RelativeTolerance>
+        <DivergenceLimit>1.e6</DivergenceLimit>
+        <ArmijoUpdate>0</ArmijoUpdate>
+        <ThetaInitial>0</ThetaInitial>
+        <ThetaMinimal>0</ThetaMinimal>
+        <ArmijoDecrease>0</ArmijoDecrease>
+        <SufficientDecrease>0</SufficientDecrease>
+        <MaxArmijoIteration>0</MaxArmijoIteration>
+        <ForcingStrategy>EisenstatWalker1</ForcingStrategy>
+        <ConstantForcingTerm>1.e-4</ConstantForcingTerm>
+        <InitialValueForcingTerm>1.e-3</InitialValueForcingTerm>
+        <MaxValueForcingTerm>0.9</MaxValueForcingTerm>
+        <GammaParameterEW2>0.9</GammaParameterEW2>
+        <AlphaParameterEW2>2</AlphaParameterEW2>
+    </NonlinearSolver>
+    <LinearSolver>
+        <MaximumIterations>1000</MaximumIterations>
+        <AbsoluteTolerance>1.e-15</AbsoluteTolerance>
+        <RelativeTolerance>1.e-6</RelativeTolerance>
+        <DivergenceLimit>1.e6</DivergenceLimit>
+        <BasisSize>500</BasisSize>
+        <Preconditioning>1</Preconditioning>
+    </LinearSolver>
+    <ILUPP>
+        <PreprocessingType>0</PreprocessingType>
+        <PreconditionerNumber>11</PreconditionerNumber>
+        <MaxMultilevels>20</MaxMultilevels>
+        <MemFactor>0.8</MemFactor>
+        <PivotThreshold>2.75</PivotThreshold>
+        <MinPivot>0.05</MinPivot>
+    </ILUPP>
+    <!--- WARNING: Pressure filter might not be suitable for the current formulation of the problem -->
+    <UsePressureFilter>1</UsePressureFilter>
+    <Backup>
+        <Restore>0</Restore>
+        <LastTimeStep>160</LastTimeStep>
+        <Filename>backup.h5</Filename>
+    </Backup>
+</Param>

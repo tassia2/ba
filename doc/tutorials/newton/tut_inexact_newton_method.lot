@@ -1,0 +1,10 @@
+\select@language {english}
+\contentsline {table}{\numberline {1}{\ignorespaces Material numbers for different geometry files}}{6}{table.1}
+\contentsline {table}{\numberline {2}{\ignorespaces Convergence Conditions of the Linear Solver}}{11}{table.2}
+\contentsline {table}{\numberline {3}{\ignorespaces Parameters of the Forcing Strategy 2}}{11}{table.3}
+\contentsline {table}{\numberline {4}{\ignorespaces Mesh Refinement}}{12}{table.4}
+\contentsline {table}{\numberline {5}{\ignorespaces Results for refinement level 0 - Sequential execution }}{13}{table.5}
+\contentsline {table}{\numberline {6}{\ignorespaces Results for refinement level 1 - Sequential execution}}{14}{table.6}
+\contentsline {table}{\numberline {7}{\ignorespaces Results for refinement level 2 - Execution with 8 processes }}{15}{table.7}
+\contentsline {table}{\numberline {8}{\ignorespaces Results for refinement level 3 - Execution with 16 processes }}{16}{table.8}
+\contentsline {table}{\numberline {9}{\ignorespaces Results for refinement level 4 - Execution with 32 processes }}{17}{table.9}

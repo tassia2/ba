@@ -1,0 +1,55 @@
+% \documentclass[a4paper]{book}%twocolumn
+% \documentclass[draft]{scrreprt}
+% \documentclass[a4paper]{scrreprt}
+% \documentclass[12pt]{report}%twocolumn
+ \documentclass[a4paper]{scrartcl}
+%\documentclass[openright,twoside,a4paper]{scrartcl} 
+
+%\bibliographystyle{plain}
+\bibliographystyle{abbrv}
+
+\input{add_pack}
+\input{new_cmd}
+\input{numbering}
+\input{page_style}
+
+\makeindex
+
+\begin{document}   
+
+% Layout configuration
+
+%\begin{changemargin}{-1.061cm}{0.0cm}
+
+% Title page
+
+\newcommand{\titel}{Coding Guide Lines for HiFlow} 
+\newcommand{\name}{Philipp Gerstner}%Name 1\\Name 2\\Name 3
+
+\title{\titel}
+\author{\name}
+\date{\today}
+
+\maketitle	
+
+\clearpage
+
+% Table of content
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+\blankpage
+\pagenumbering{arabic}
+\clearpage
+\thispagestyle{plain}
+\input{chapters/naming}
+\input{chapters/optimization}
+\input{chapters/class_design}
+\input{chapters/modern_cpp}
+\clearpage
+%\bibliography{CFD_ref}{}
+
+% \end{changemargin}
+\printindex
+\end{document}

@@ -1,0 +1,381 @@
+
+
+% REFINEMENT LEVEL 0
+
+\begin{sidewaystable}[p]
+\begin{changemargin}{-2cm}{0cm}
+\hspace{4cm}
+\begin{tabular}{l c p{2cm}  | c c c c c}
+\multicolumn{4}{l}{Cell count of the refined mesh is 2206.} & & & \\
+\multicolumn{4}{l}{Total degrees of freedom count is 10377.} & & & \\  \\
+ 
+\hline
+ & & & & \\
+& & & Residuum & 
+\begin{tabular}{c}
+Duration \\ \lbrack seconds\rbrack
+\end{tabular}
+&
+\begin{tabular}{c}
+Duration \\ \lbrack ratio\rbrack
+\end{tabular}
+& Newton steps & 
+\begin{tabular}{c}
+Linear solver iterations \\
+\lbrack per Newton step\rbrack
+\end{tabular}\\ \hline 
+ & & & & \\
+\multicolumn{3}{l|}{Exact Newton method}  \\ 
+\hline \hline 
+& & & 6.78782E-010 & 17.758 & 1 & 5 & 
+\begin{tabular}{c c c c c}
+6 & 6 & 6 & 6 & 6 \\
+\end{tabular} \\ 
+ & & & & \\
+\multicolumn{3}{l|}{Inexact Newton method}  \\
+\hline \hline
+\multicolumn{3}{l|}{Eisenstat Walker 1} & 
+1.07154E-008 & 17.821 & 1.0035 & 5 &
+\begin{tabular}{c c c c c}
+1 & 1 & 1 & 2 & 2 \\
+\end{tabular} \\ 
+ & & & & \\
+ \hline
+\multicolumn{3}{l|}{Eisenstat Walker 2} \\
+ & Gamma & Alpha & & & \\
+ & & 1 & 1.07154E-008 & 17.829 & 1.0040 & 5 & 
+\begin{tabular}{c c c c c}
+1 & 1 & 1 & 2 & 2 \\
+\end{tabular} \\
+ & 0.8 & $ \frac{1 + \sqrt{5}}{2} $ &  
+7.14838E-010 & 17.874 & 1.0065 & 5 &
+\begin{tabular}{c c c c c}
+1 & 2 & 1 & 2 & 3 \\
+\end{tabular} \\
+ & & 2 & 2.86797E-010 & 17.861 & 1.0058 & 5 &
+\begin{tabular}{c c c c c}
+1 & 2 & 1 & 2 & 4 \\
+\end{tabular} \\
+ & & & & \\
+ \hline
+ & & 1 & 1.07154E-008 & 17.850 & 1.0052 & 5 &
+\begin{tabular}{c c c c c}
+1 & 1 & 1 & 2 & 2 \\
+\end{tabular} \\
+ & 0.9 & $ \frac{1 + \sqrt{5}}{2} $ & 
+7.14838E-010 & 17.836 & 1.0044 & 5 &
+\begin{tabular}{c c c c c}
+1 & 2 & 1 & 2 & 3 \\
+\end{tabular} \\
+ & & 2 & 2.86797E-010 & 17.846 & 1.0050 & 5 &
+\begin{tabular}{c c c c c}
+1 & 1 & 1 & 2 & 2 \\
+\end{tabular} \\
+ & & & & \\
+ \hline
+  & & 1 & 7.22867E-009 & 21.430 & 1.2068 & 6 &
+\begin{tabular}{c c c c c c}
+1 & 1 & 1 & 1 & 1 & 2 \\
+\end{tabular} \\
+& 1.0 & $ \frac{1 + \sqrt{5}}{2} $ &
+7.14838E-010 & 17.833 & 1.0042 & 5 &
+\begin{tabular}{c c c c c}
+1 & 2 & 1 & 2 & 3 \\
+\end{tabular} \\
+ & & 2 & 2.86797E-010 & 17.832 & 1.0042 & 5 &
+\begin{tabular}{c c c c c}
+1 & 2 & 1 & 2 & 4 \\
+\end{tabular} \\
+ & & & & \\
+ \hline
+& & 1 & 3.53137E-010 & 25.045 & 1.4104 & 7 &
+\begin{tabular}{c c c c c c c}
+1 & 1 & 1 & 1 & 1 & 1 & 2 \\
+\end{tabular} \\
+& 1.1 & $ \frac{1 + \sqrt{5}}{2} $ &
+6.58038E-010 & 17.817 & 1.0033 & 5 & 
+\begin{tabular}{c c c c c}
+1 & 1 & 1 & 2 & 3 \\
+\end{tabular}\\
+ & & 2 & 2.86797E-010 & 17.878 & 1.0068 & 5 &
+ \begin{tabular}{c c c c c}
+1 & 2 & 1 & 2 & 4 \\
+\end{tabular}\\ 
+ & & & & \\ \hline 
+\end{tabular}
+
+\end{changemargin}
+
+\caption{ Results for refinement level 0 - Sequential execution }
+\end{sidewaystable}
+
+
+% REFINEMENT LEVEL 1
+\begin{sidewaystable}[p]
+\hspace{4cm}
+\begin{tabular}{l c p{2cm}| c c c c c c c c c c c}
+\multicolumn{4}{l}{Cell count of the refined mesh is 8824.} & & & \\
+\multicolumn{4}{l}{Total degrees of freedom count is 40608.} & & & \\ \\
+\hline
+ & & & & \\
+& & & Residuum & Duration &
+\begin{tabular}{c}
+Duration \\ \lbrack ratio\rbrack
+\end{tabular}
+& 
+\begin{tabular}{c}
+Newton \\ steps
+\end{tabular} 
+& \multicolumn{7}{c}{\begin{tabular}{c}
+Linear solver iterations \\ \lbrack per Newton step\rbrack
+\end{tabular} } \\ \hline  & & & & \\
+\multicolumn{3}{l|}{Exact Newton method} \\ 
+\hline \hline 
+& & & 2.64412E-010 & 4m46.5s & 1 & 5 & 12 & 9 & 9 & 9 & 9\\
+ & & & & \\
+\multicolumn{3}{l|}{Inexact Newton method} \\
+\hline \hline
+\multicolumn{3}{l|}{Eisenstat Walker 1} & 
+6.84645E-013 & 5m41.9s & 1.193 & 6 & 1 & 4 & 2 & 4 & 4 & 7 \\ 
+ & & & & \\
+  \hline
+\multicolumn{3}{l|}{Eisenstat Walker 2} \\
+ & Gamma & Alpha & & & \\
+ & & 1 & 7.85629E-010 & 5m39.5s & 1.185 & 6 & 1 & 3 & 1 & 3 & 4 & 4\\
+ & 0.8 & $ \frac{1 + \sqrt{5}}{2} $ &  
+6.83429E-009 & 4m37.2s & 0.968 & 5 & 1 & 5 & 3 & 4 & 5\\
+ & & 2 & 2.73588E-009 & 4m37.7s & 0.969 & 5 & 1 & 5 & 3 & 5 & 6\\
+ & & & & \\
+  \hline
+ & & 1 & 6.17652E-010 & 6m44.1s & 1.411 & 7 & 1 & 3 & 1 & 2 & 2 & 3 & 4\\
+ & 0.9 & $ \frac{1 + \sqrt{5}}{2} $ & 
+6.83429E-009 & 4m37.3s & 0.968 & 5 & 1 & 5 & 3 & 4 & 5\\
+ & & 2 & 2.73588E-009 & 4m37.5s & 0.969 & 5 & 1 & 5 & 3 & 5 & 6\\
+ & & & & \\
+  \hline
+  & & 1 & 6.17652E-010 & 6m43.9s & 1.410 & 7 & 1 & 3 & 1 & 2 & 2 & 3 & 4\\
+& 1.0 & $ \frac{1 + \sqrt{5}}{2} $ &
+3.00656E-009 & 4m41s & 0.981 & 5 & 1 & 4 & 3 & 4 & 5\\
+ & & 2 & 2.73588E-009 & 4m43.4s & 0.989 & 5 & 1 & 5 & 3 & 5 & 6\\
+ & & & & \\
+  \hline
+  & & 1 & 1.97252E-008 & 6m49.5s & 1.429 & 7 & 1 & 2 & 1 & 1 & 2 & 2 & 3\\
+& 1.1 & $ \frac{1 + \sqrt{5}}{2} $ &
+3.00656E-009 & 4m40.1s & 0.978 & 5 & 1 & 4 & 3 & 4 & 5\\
+ & & 2 & 2.73588E-009 & 4m41.8s & 0.984 & 5 & 1 & 5 & 3 & 5 & 6\\ 
+  & & & & \\ \hline 
+\end{tabular}
+
+
+\caption{ Results for refinement level 1 - Sequential execution}
+
+\end{sidewaystable}
+
+
+
+% REFINEMENT LEVEL 2
+\begin{sidewaystable}[p]
+
+\begin{changemargin}{-2cm}{0cm}
+\hspace{4cm}
+\begin{tabular}{l c p{2cm} | c c c c c c c c c c c}
+\multicolumn{4}{l}{Cell count of the refined mesh is 35296.} & & & \\
+\multicolumn{4}{l}{Total degrees of freedom count is 160632.} & & & \\ \\
+\hline
+ & & & & \\
+& & & Residuum & Duration &
+\begin{tabular}{c}
+Duration \\ \lbrack ratio\rbrack
+\end{tabular}
+& 
+\begin{tabular}{c}
+Newton \\ steps
+\end{tabular} 
+& \multicolumn{6}{c}{\begin{tabular}{c}
+Linear solver iterations \\ \lbrack per Newton step\rbrack
+\end{tabular} } \\ \hline  & & & & \\
+\multicolumn{3}{l|}{Exact Newton method} \\ 
+\hline \hline 
+& & & 1.25615E-010 & 1m31.4s & 1 & 5 & 109 & 84 & 84 & 88 & 90 \\  & & & & \\
+\multicolumn{3}{l|}{Inexact Newton method} \\
+\hline \hline
+\multicolumn{3}{l|}{Eisenstat Walker 1} & 
+3.42601E-009 & 1m43.3s & 1.130 & 6 & 1 & 46 & 17 & 36 & 39 & 54 \\ 
+ & & & & \\
+ \hline
+\multicolumn{3}{l|}{Eisenstat Walker 2} \\
+ & Gamma & Alpha & & & \\
+ & & 1 & 3.13709E-009 & 2m22.7s & 1.561 & 9 & 1 & 18 & 14 & 16 & 18 & 22 \\
+ & & & & & & & 19 & 26 & 23 \\
+ & 0.8 & $ \frac{1 + \sqrt{5}}{2} $ &  
+1.31915E-009 & 1m42.5s & 1.121 & 6 & 1 & 21 & 24 & 41 & 38 & 51 \\
+ & & 2 & 1.81827E-010 & 1m44.3s & 1.141 & 6 & 1 & 22 & 28 & 46 & 48 & 65 \\
+ & & & & \\
+  \hline
+ & & 1 & 8.69453E-009 & 2m36.2s & 1.709 & 10 & 1 & 18 & 13 & 15 & 14 & 17 \\
+ & & & & & & & 18 & 18 & 18 & 19 \\ 
+ & 0.9 & $ \frac{1 + \sqrt{5}}{2} $ & 
+1.21791E-009 & 1m42s & 1.116 & 6 & 1 & 20 & 21 & 37 & 40 & 51 \\
+ & & 2 & 1.81761E-010 & 1m44.2s & 1.140 & 6 & 1 & 22 & 27 & 45 & 46 & 64 \\
+ & & & & \\
+  \hline
+ & & 1 & 1.22006E-008 & 3m22.8s & 2.219 & 13 & 1 & 16 & 12 & 12 & 11 & 10 \\
+ & & & & & & & 12 & 12 & 14 & 14 & 15 & 15 & 16 \\   
+& 1.0 & $ \frac{1 + \sqrt{5}}{2} $ &
+4.93468E-009 & 1m42.5s & 1.121 & 6 & 1 & 20 & 20 & 35 & 37 & 47 \\
+ & & 2 & 1.51781E-010 & 1m44.7s & 1.146 & 6 & 1 & 21 & 25 & 44 & 49 & 65 \\
+ & & & & \\
+  \hline
+  & & 1 & 9.62694E-007 & 4m54.1s & 3.218 & 20 & 1 & 15 & 13 & 10 & 10 & 5 \\
+  & & & & & & & 5 & 6 & 9 & 6 & 9 & 5 & 6 \\
+  & & & & & & & 7 & 6 & 5 & 4 & 5 & 5 & 4 \\
+& 1.1 & $ \frac{1 + \sqrt{5}}{2} $ &
+3.08431E-012 & 1m58.8s & 1.300 & 7 & 1 & 19 & 17 & 26 & 35 & 42 & 56 \\
+ & & 2 & 1.59374E-010 & 1m43.9s & 1.137 & 6 & 1 & 21 & 24 & 43 & 47 & 64 \\   \hline 
+\end{tabular}
+
+\end{changemargin}
+
+\caption{ Results for refinement level 2 - Execution with 8 processes }
+
+\end{sidewaystable}
+
+% REFINEMENT LEVEL 3
+\begin{sidewaystable}[p]
+
+\begin{changemargin}{-2cm}{0cm}
+\hspace{4cm}
+\begin{tabular}{l c p{2cm} | c c c c c c c c c c c}
+\multicolumn{4}{l}{Cell count of the refined mesh is 141184.} & & & \\
+\multicolumn{4}{l}{Total degrees of freedom count is 638928.} & & & \\ \\
+\hline
+ & & & & \\
+& & & Residuum & Duration &
+\begin{tabular}{c}
+Duration \\ \lbrack ratio\rbrack
+\end{tabular}
+& 
+\begin{tabular}{c}
+Newton \\ steps
+\end{tabular} 
+& \multicolumn{7}{c}{\begin{tabular}{c}
+Linear solver iterations \\ \lbrack per Newton step\rbrack
+\end{tabular} } \\ \hline  & & & & \\
+\multicolumn{3}{l|}{Exact Newton method} \\ 
+\hline \hline 
+& & & 6.21979E-011 & 5m45.8s & 1 & 5 & 211 & 214 & 240 & 246 & 244 & \\ & & & & \\
+\multicolumn{3}{l|}{Inexact Newton method} \\
+\hline \hline
+\multicolumn{3}{l|}{Eisenstat Walker 1} & 
+9.47125E-009 & 5m36.5s & 0.973 & 6 & 1 & 88 & 36 & 93 & 82 & 139 \\ 
+& & & & \\
+ \hline
+\multicolumn{3}{l|}{Eisenstat Walker 2} \\
+ & Gamma & Alpha & & & \\
+ & & 1 & 4.5464E-009 & 8m1s & 1.391 & 9 & 1 & 33 & 38 & 41 & 52 & 69 \\
+ & & & & & & & 65 & 47 & 55 \\
+  & 0.8 & $ \frac{1 + \sqrt{5}}{2} $ &  
+1.36005E-009 & 5m38s & 0.977 & 6 & 1 & 48 & 58 & 109 & 109 & 149 \\
+ & & 2 & 1.07252E-010 & 5m49.8s & 1.012 & 6 & 1 & 53 & 81 & 127 & 139 & 192 \\
+& & & & \\
+ \hline
+ & & 1 & 4.03001E-009 & 10m27.7s & 1.815 & 12 & 1 & 28 & 35 & 30 & 28 & 40 \\
+ & & & & & & & 47 & 47 & 46 & 33 & 44 & 42 \\
+ & 0.9 & $ \frac{1 + \sqrt{5}}{2} $ & 
+1.53368E-009 & 5m48.2s & 1.007 & 6 & 1 & 45 & 54 & 102 & 115 & 140 \\
+ & & 2 & 1.32034E-010 & 5m47.8s & 1.006 & 6 & 1 & 52 & 77 & 123 & 132 & 190 \\
+& & & & \\
+ \hline
+  & & 1 & 9.29623E-009 & 16m1.6s & 2.781 & 19 & 1 & 21 & 34 & 15 & 18 & 16 \\
+  & & & & & & & 27 & 22 & 25 & 29 & 23 & 37 \\
+  & & & & & & & 25 & 22 & 34 & 25 & 23 & 31 & 24 \\
+& 1.0 & $ \frac{1 + \sqrt{5}}{2} $ &
+3.07228E-009 & 5m45.8s & 1 & 6 & 1 & 42 & 50 & 90 & 119 & 149 \\
+ & & 2 & 1.44509E-010 & 5m52.7s & 1.020 & 6 & 1 & 50 & 71 & 121 & 120 & 193 \\
+& & & & \\
+ \hline
+  & & 1 & 7.81944E-005 & 16m18.2s & 2.830 & 20 & 1 & 18 & 32 & 12 & 11 & 12 \\
+  & & & & & & & 11 & 6 & 3 & 3 & 3 & 4 & 4 \\
+  & & & & & & & 5 & 10 & 7 & 6 & 4 & 4 & 4 \\
+& 1.1 & $ \frac{1 + \sqrt{5}}{2} $ &
+9.58617E-009 & 5m45s & 0.998 & 6 & 1 & 40 & 47 & 75 & 111 & 136 \\
+ & & 2 & 1.68058E-010 & 5m56.1s & 1.030 & 6 & 1 & 48 & 63 & 120 & 120 & 189 \\ \hline 
+\end{tabular}
+
+\end{changemargin}
+
+\caption{ Results for refinement level 3 - Execution with 16 processes }
+
+\end{sidewaystable}
+
+
+
+% REFINEMENT LEVEL 4
+
+\begin{sidewaystable}[p]
+
+\begin{changemargin}{-2.8cm}{0cm}
+\hspace{4cm}
+\begin{tabular}{l c p{2cm} | c c c c c c c c c c}
+\multicolumn{4}{l}{Cell count of the refined mesh is 564736} & & & \\
+\multicolumn{4}{l}{Total degrees of freedom count is 2548512} & & & \\ \\
+\hline
+ & & & & \\
+& & & Residuum & Duration &
+\begin{tabular}{c}
+Duration \\ \lbrack ratio\rbrack
+\end{tabular}
+& 
+\begin{tabular}{c}
+Newton \\ steps 
+\end{tabular}
+& \multicolumn{6}{c}{\begin{tabular}{c}
+Linear solver iterations \\ \lbrack per Newton step\rbrack
+\end{tabular} } \\ \hline & & & & \\
+\multicolumn{3}{l|}{Exact Newton method} \\ 
+\hline \hline 
+& & & 3.09906E-011 & 24m38.9s & 1 & 5 & 436 & 550 & 603 & 610 & 638 \\ & & & & \\
+\multicolumn{3}{l|}{Inexact Newton method} \\
+\hline \hline
+\multicolumn{3}{l|}{Eisenstat Walker 1} & 
+4.91523E-009 & 19m15.3s & 0.781 & 6 & & & & & & \\ 
+
+ \hline
+\multicolumn{3}{l|}{Eisenstat Walker 2} \\
+ & Gamma & Alpha & & & \\
+ & & 1 & 1.01844E-008 & 25m11.2s & 1.022 & 9 & 1 & 36 & 100 & 65 & 117 & 144 \\
+ & & & & & & & 161 & 136 & 147 \\
+ & 0.8 & $ \frac{1 + \sqrt{5}}{2} $ &  
+1.72337E-009 & 20m9.1s & 0.818 & 6 & 1 & 99 & 150 & 287 & 305 & 319 \\
+ & & 2 & 1.68935E-010 & 21m10s & 0.859 & 6 & 1 & 106 & 257 & 309 & 333 & 436 \\
+
+ \hline
+ & & 1 & 7.40192E-009 & 30m38.8s & 1.243 & 11 & 1 & 27 & 93 & 53 & 66 & 107 \\
+ & & & & & & & 133 & 132 & 87 & 107 & 87 \\
+ & 0.9 & $ \frac{1 + \sqrt{5}}{2} $ & 
+1.43398E-009 & 19m48.4s & 0.804 & 6 & 1 & 95 & 130 & 256 & 301 & 317 \\
+ & & 2 & 2.69001E-010 & 22m9.6s & 0.899 & 6 & 1 & 104 & 231 & 308 & 324 & 411 \\
+
+ \hline
+  & & 1 & 1.06235E-008 & 43m52.7s & 1.780 & 16 & 1 & 23 & 90 & 43 & 53 & 43 \\
+  & & & & & & & 83 & 61 & 88 & 95 & 74 & 60 \\
+  & & & & & & & 82 & 62 & 54 & 89 \\
+& 1.0 & $ \frac{1 + \sqrt{5}}{2} $ &
+7.35479E-010 & 21m22.8s & 0.867 & 6 & 1 & 86 & 129 & 227 & 307 & 363 \\
+ & & 2 & 5.04675E-010 & 22m46.9s & 0.924 & 6 & 1 & 102 & 196 & 306 & 318 & 392 \\
+
+ \hline
+  & & 1 & 2.41731E-005 & 49m42.6s & 2.017 & 20 & 1 & 19 & 82 & 37 & 41 & 38 \\
+  & & & & & & & 22 & 15 & 20 & 26 & 30 & 33 \\
+  & & & & & & & 20 & 21 & 10 & 6 & 8 & 8 \\
+  & & & & & & & 7 & 10 \\
+& 1.1 & $ \frac{1 + \sqrt{5}}{2} $ &
+4.04693E-009 & 18m20.2s & 0.744 & 6 & 1 & 76 & 124 & 187 & 268 & 317 \\
+ & & 2 & 6.50955E-010 & 19m51.1s & 0.805 & 6 & 1 & 101 & 181 & 307 & 316 & 382 \\  \hline 
+\end{tabular}
+
+\caption{ Results for refinement level 4 - Execution with 32 processes }
+
+\end{changemargin}
+
+\end{sidewaystable}

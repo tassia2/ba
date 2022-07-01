@@ -1,0 +1,346 @@
+\section{Motivation, Concepts and Structure of \hiflow{}}
+
+\subsection{Fields of Application}
+A typical application incorporating the full complexity of physical
+and mathematical modeling is the \emph{United Airways} project
+\cite{ua:10}.  Within an interdisciplinary framework its objective is
+the simulation of the full human respiratory tract including complex
+and time-dependent geometries with different length scales,
+turbulence, fluid-structure interaction (e.g.~fine hairs and mucus),
+and effects due to temperature and moisture variations. Due to the
+complex interaction of all effects it is a great challenge to
+construct robust numerical methods giving accurate simulation results
+within a moderate time. As a further vision, interactive and real time
+simulations should give medical advice on personalized data during
+examination and surgery. Another example is the project 
+\emph{Goal Oriented Adaptivity for Tropical Cyclones} (see \ref{TropicalCyclones}).
+Many weather phenomena such as the development and motion of Tropical
+Cyclones are influenced by processes on scales that may range from hundreds 
+of meters to thousands of kilometers. Due to computational requirements and memory 
+limitations it is often impossible to resolve all relevant scales on globally 
+refined meshes. 
+Application dependent requirements and varying demands with respect to the quantity 
+which is of interest lead to specific treatment of modern adaptive numerical 
+methods that need to be adapted to the associated problem settings.
+
+\subsection{Flexibility}
+The conceptual goal of \hiflow{} is to be a flexible multi-purpose
+software package that can be adapted to most user scenarios. To this
+end, the core of \hiflow{} is divided into three main modules: Mesh,
+DoF/FEM and Linear Algebra; see
+Figure~\ref{softwarekernel}. These three core modules -- further extended
+by a suite of other modules -- are essential for the solution
+procedure based on finite element methods for partial
+differential equations. They offer the main functionality for mapping
+mathematical problem scenarios into parallel software.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{./fig/Module_Methoden3}
+\caption{Structure of the \hiflow{} core divided into modules and
+methods.}
+\label{softwarekernel}
+\end{figure}
+
+Other building blocks for \hiflow{} are routines for numerical
+integration of element integrals, assembling of system matrices,
+inclusion of boundary conditions, setting up nonlinear and linear
+solvers, providing output data for visualization of solutions, error estimators,
+and others. These routines are added to the core modules. This modular
+structure ensures the flexibility to employ the library to solve a
+wide variety of problems. Another aspect of modularity is to enable
+extensibility of the \hiflow{} package.  There exist two basic ways to
+extend \hiflow{}. Firstly further modules and methods for user-defined
+applications such as modules for stochastic finite elements or
+chemical reactions can be added to the \hiflow{} core. Secondly
+existing modules and methods can be augmented by adding further
+functionality. The possibility to extend \hiflow{} by static or
+dynamic polymorphism provides a basis for future development. For
+instance in the mesh module a new implementation inherited from the
+abstract mesh base class can be implemented, the DoF/FEM module can be
+extended by further finite elements spaces such as $H(div)$ or
+$H(curl$), and in the Linear Algebra module more data structures for
+matrices could be added -- all in the sense of dynamic
+polymorphism. Available linear algebra data structure can be extended
+through the use of templates. The basic principle of \hiflow{} is the aim for a
+generic implementation in order to be able to use different modules
+and methods for a variety of problems following the approach of a
+multi-purpose software. Of course there is a trade-off when dealing
+with problems that need particular implementation and
+highly-specialized methods for efficient, robust and accurate
+simulations.
+
+\subsection{Performance, Parallelism, Emerging Technologies}
+Another object of \hiflow{} is the full utilization of all available
+resources on any platform -- from large HPC systems to any stand-alone
+workstation or coprocessor-accelerated machine. To achieve this goal
+all three modules (Mesh, DoF/FEM, Linear Algebra) provide distributed
+data structures. The communication between different nodes and
+processors is realized by means of an MPI-layer. On the linear algebra
+level we use concepts of hardware-aware computing for acceleration of
+basic routines like local matrix-vector and vector-vector
+operations. Here, the main challenge is to fully utilize the available
+computing power of emerging technologies like multi-core CPUs, 
+graphics processing units (GPUs),
+multi-GPUs, and any other coprocessor-accelerated or heterogeneous
+platform. The advantage of the structure provided by the Linear
+Algebra module is the potential to build solvers without having
+detailed information on the underlying platform. All methods are layed
+out with respect to scalability in a generic sense. Of course, best
+performance conflicts with flexibility. In that case \hiflow{} favors
+performance over flexibility -- which could mean to offer a solver
+which is only efficient for a special problem. Another important issue
+is the usability and convenience. \hiflow{} provides the user with a
+transparent structure enabling him to set up and get a simulation for 
+his application running with minimal effort.
+
+\subsection{Hardware-aware Computing}
+The huge demand on fast and accurate simulation results for
+large-scale problems poses considerable challenges on the
+implementation on modern hardware.  Supercomputers and emerging
+parallel hardware like GPUs offer
+impressive computing power in the range of Teraflop/s for desktop
+supercomputing up to Petaflop/s for cutting edge HPC machines. The
+major difficulty is the development of efficient parallel code that is
+scalable with respect to exponentially increasing core counts and
+portable across a wide range of computing platforms. With the advent
+of the many-core era new platforms like the GPUs, the Cell BE,
+FPGA-based systems like Convey's Hybrid Core Computer or Intel's tiled
+architectures (Polaris, Rock Creek) or the Larrabee incarnation Knight
+Ferry have emerged \cite{Convey,williams2,Luk,Oboril10,Schmidtobreick10,williams1,williams3}.
+These technologies come along with impressive
+capabilities but different programming approaches, different
+processing models, and different tool chains. Moreover, all numerical
+methods need to be compliant with multiple levels of parallelism
+within hybrid systems and with hierarchical memory
+subsystems. Typically, manual tuning and parameter variation is
+necessary for optimal performance on a dedicated system. In this
+context, hardware-aware computing is a multi-disciplinary approach to
+identify the best combination of applications, physical models,
+numerical schemes, parallel algorithms, and platform-specific
+implementations that is giving the fastest and most accurate results
+on a particular platform \cite{HAC}. Design goals are maximal
+flexibility with respect to software capabilities, mathematical
+quality, efficient resource utilization, performance, and portability
+of concepts. Hardware-aware computing not only comprises
+highly-optimized platform-specific implementations, design of
+communication-optimized data structures, and maximizing data reuse by
+temporal and spatial blocking techniques – it also relies on the
+choice and development of adequate mathematical models that express
+multilevel-parallelism and scalability up to a huge number of
+cores. The models need to be adapted to a wide range of platforms and
+programming environments. Data and problem decomposition on
+heterogeneous platforms is a further objective. Memory transfer
+reduction strategies are an important concept for facing the
+bottlenecks of current platforms. Since hardware reality and
+mathematical cognition give rise to different implementation concepts,
+hardware-aware computing means also to find a balance between the
+associated opponent guiding lines while keeping the best mathematical
+quality (e.g. optimal work complexity, convergence order, error
+reduction and control, accuracy, robustness, efficiency). All
+solutions need to be designed in a reliable, robust and future-proof
+context. The goal is not to design isolated solutions for particular
+configurations but to develop methodologies and concepts that
+preferably apply to a wide range of problem classes and architectures
+or that can be easily extended or adapted. The \hiflow{} project has
+implemented related concepts in the framework of the local
+multi-platform LAtoolbox \cite{HLW2010,HSLW2010} within the Linear 
+Algebra module.
+
+\subsection{Object-oriented Programming Approach}
+In order to be able to handle the complexity of
+solving such a great variety of problems \hiflow{} is implemented in
+C++. The object-oriented paradigm of C++ with its support for
+polymorphism and inheritance allows all involved developers to
+contribute with their individual specialized knowledge. End-user and
+researcher can handle opaque and problem-oriented objects, computer
+scientists and hardware specialists produce optimized low-level
+implementations, while mathematicians provide new numerical solver
+algorithms. Furthermore, the intensive use of the template features of
+C++ gives the compiler a lot of opportunities for compile-time
+optimizations. Our modular approach with utilization of the
+object-oriented concepts of C++ is the best way to handle the
+complexity of such a sophisticated software project with many
+contributors. The approaches of data abstraction, encapsulation and
+clear interfaces between various modules not only ease maintainability
+of the code but also enable reusability of specific parts for the
+extension of functionalities and features. An additional benefit of
+this approach is the possibility to use parts of the software as
+stand-alone libraries or modules for other projects like e.g.~the
+LAtoolbox. In such a way, our project provides building blocks for the
+development of new solvers and the extension to new problem domains.
+
+\subsection{Modeling and Workflow}
+Many physical problems are modeled by means of partial differential
+equations.  Typical examples are the Poisson equation (e.g.~for
+electric or gravity fields), stationary or time-dependent convection
+diffusion equations (e.g.~transfer of particles or energy), and the
+Navier-Stokes equation (e.g.~fluid flow around an obstacle, simulation
+of a tropical storm, air flow in the lung). A classical approach for
+solving associated problems relies on discretization of the equations
+in the domain of interest by means of finite element methods
+\cite{brezzi2008,braess2007,ciarlet2002} on spatial grids.  Searching
+for approximations in finite dimensional function spaces by means of
+weak formulations results in linear or nonlinear systems of equations
+that are typically solved by Newton-type methods, time-stepping
+schemes and iterative solvers. Coupling between degrees of freedom is
+mainly expressed by nearest neighbor interaction with a high degree of
+locality. Due to the required accuracy of the discrete approximations
+large numbers of degrees of freedom are required resulting in huge and
+sparse matrices with bad condition numbers in general.
+
+For the finite element solution procedure the following steps have to
+be performed for mapping a problem modeled by PDEs to \hiflow. First,
+the physical problem has to be expressed in terms of PDEs in an
+adequate way.  The next theoretical step is to derive a weak
+formulation in a variational sense. In a preprocessing step the domain
+of interest is discretized by means of a finite element triangulation
+and converted to a format readable by the mesh module. Once the
+spatial grid is read in it can be adjusted e.g.~by means of a
+refinement procedure. Then, a problem-adapted finite element space
+with appropriate ansatz functions has to be chosen. For the Navier-Stokes
+equations Taylor-Hood elements are an appropriate choice. Once these two
+informations are provided the degrees of freedom can be determined first locally
+(this corresponds to the FEM part) on each cell, and then globally for the whole
+mesh (this corresponds to the DoF part). In the case of distributed
+memory platforms the DoF-partitioner is used to create a global degree of freedom (DoF) numbering
+throughout the whole computational domain by only using its local information
+and MPI communication across the nodes. Once all DoFs are identified the matrix
+can be assembled by local integration over all elements within the
+triangulation. Data structures for matrices and vectors are provided by the
+Linear Algebra module. In case of nonlinear problems a Newton method is
+combined with a linear solver for the problem solution. Finally, output in
+either sequential or parallel format is provided for the visualization. 
+This is an important aspect of the simulation cycle for an assessment and
+exploration of simulation data. There exist several visualization tools which 
+can be used for this postprocessing step. Within \hiflow{} there are
+e.g.~back ends for HiVision \cite{HiVision} and Paraview \cite{Paraview}.
+
+\subsection{Modules in \hiflow{}}
+The implementation of a parallel and flexible finite element software package
+aiming at general purpose deployment and portability across a wide range of
+platforms comes along with various challenges in the respective
+modules. 
+
+% The mesh module takes care of the handling of the mesh. \hiflow{} is
+% designed in first place for unstructured meshes. This results in the task to
+% select an adequate data structure to store all necessary neighborhood
+% relations. Distributed data structures are implemented for which reason the 
+% connection of the local mesh on each processor in the global context must be
+% provided without direct access to the data. 
+% This fact results in the question of optimization of the communication between
+% processes. Regarding the communication in matrix-vector operations implemented
+% in the Linear Algebra module the concept of ghost cells is utilized. Each
+% process gets additional information on the neighboring layer with respect to
+% its local boundary cells. Another challenge arises from refinement and load
+% balancing. The mesh offers the possibility to refine each cell locally with
+% different types of refinements. In order to be able to track the history of
+% refinement the parent relationship is stored.  
+% The mesh itself can handle mixed meshes in two and three dimensions.
+% Implemented cell types are triangles and quadrilaterals in 2D and 
+% tetrahedrons and hexahedrons in 3D. Notably, there is no limitation to add more
+% elements such as pyramids or prisms. The handling of non-conforming grids within 
+% distributed data structures is considered e.g. for the ability to apply
+% $h$-refinements locally to a cell \cite{Demkowicz,Schwab2004,Solin}.
+The mesh module is responsible for the interaction with the
+discretized computational domain. It is designed primarily for
+unstructured meshes, and can handle several different cell types in
+different dimensions. In order to support adaptive algorithms, the
+Mesh module can work with both nonconforming meshes and meshes
+containing cells of mixed types. Additionally, it provides
+functionality to refine and coarsen a mesh, both globally and locally,
+and to retrieve the history of these modifications. Furthermore, the
+use of meshes distributed over several processors is supported, in
+order to reduce the memory requirements for large-scale simulations
+running on a high-performance cluster. For this purpose, the module
+also contains functionality for dealing with partitioning and
+communication of the mesh data. The link between the local mesh and
+its neighbors is a layer of ghost cells that are
+shared between each pair of processors.
+
+The DoF/FEM module treats the problem of numbering and interpolating the degrees
+of freedom. In the first step the local DoFs of each cell
+for a chosen finite element space need to be determined. Then the local DoFs
+of each cell have to be numbered globally. We are 
+using a generic approach handling all cell types and finite element spaces.
+In the case of distributed data structure the DoF module further handles the
+neighborhood relations between cells which are distributed on different
+processors. To this end, the module takes advantage of ghost cells created by
+the mesh module. Another task is to distribute the DoFs in a balanced way such
+that each processor is responsible for almost the same number of degrees of
+freedom. Here, different complexities and work load contributions need to be
+considered since each cell might use different ansatz functions.
+
+The Linear Algebra module provides distributed and platform-optimized
+data structures for vectors and matrices as well as implementations for corresponding
+matrix-vector and vector-vector operations. Due to localized
+interactions between finite element basis functions resulting matrices
+are typically sparse. For that purpose, adequate sparse matrix formats
+are provided. The structure of the Linear Algebra module is based on
+two levels: the inter-node level communication layer utilizes MPI and
+the intra-node communication and computation model is based on
+platform-specific programming environments that are accessed by
+generic and unified interfaces. In order to reduce the cost of
+communication on the upper layer the Linear Algebra module takes
+advantage of ghost cells provided by the Mesh module (and also used in
+the DoF module). On the local intra-node layer the focus is set to
+methods of hardware-aware computing aiming at best choice of
+platform-specific implementations. The concept of the Linear Algebra
+module allows to compute local matrix vector operations on hybrid
+systems and accelerators such as multi-core-CPUs, GPUs, and
+OpenCL-enabled devices. By providing unified interfaces with back ends
+to different platforms and accelerators the module allows seamless
+integration of various numerical libraries and devices. The user is
+freed from any particular hardware knowledge -- the final decision on
+platform and chosen implementation is taken at run time. Naturally,
+scalability plays an important role in this module.
+
+\subsection{Short Survey on Existing FEM-Software}
+There exist reams of other non-commercial and commercial parallel
+finite element software packages beside \hiflow{}. We do not want to
+give an complete and exhaustive overview on state-of-the art finite
+element software but we want to mention in alphabetical order at least a few of them.
+Alberta \cite{Alberta} is an adaptive hierarchical finite element
+toolbox. Only simplices are used for the triangulation. Refinement and
+coarsening is restricted to bisection.  The main focus lies on
+adaptivity which is achieved by different mesh modification algorithms
+and a data structure which stores the mesh in a binary tree. COMSOL Multiphysics
+\cite{COMSOL} is a commercial simulation software
+environment. It includes the definition of the geometry, meshing,
+specifying the physics, solving as well as the visualization.  For
+good usability many common problem types are predefined as templates.
+The C++ programming library deal.II \cite{BHK,BHK07} is an Open Source
+project and uses adaptive finite elements for solving partial
+differential equations. It supports one, two, and three space
+dimensions, and is restricted to intervals, quadrilaterals and
+hexahedrons. 
+%Parallelization is possible only via MPI. 
+DUNE \cite{DUNE} is a modular toolbox for
+solving PDEs with grid based methods.  It is not restricted to Finite
+Elements but also discretizes with Finite Volumes and Finite
+Differences. The main principles are abstract interfaces, generic
+programming techniques and reuse of existing finite element packages.
+FEAST \cite{FEAST} is a software package designed to solve FE
+problems. For better floating point performance and memory utilization
+it can use different co-processors platforms like GPU and Cell
+BE. It is based on a specific structure grid which lead to sparse
+banded matrices.  Fluent \cite{Fluent} is a commercial Computation
+Fluid Dynamics (CFD) software package provided from Ansys Inc. It is
+one of the most mature software on the CFD market. NASTRAN is a program for general
+Finite Element Analysis which was originally developed in the late
+1960s for the NASA. The whole software package is quite large and
+powerful but due to its age it is written in old legacy
+languages. UG \cite{UG} stands for unstructured grids and is a software tool for
+numerical solutions of partial differential equations. To achieve
+numerical efficiency UG uses adaptivity on the grid level, multi-grid
+methods and parallelism in form of distributed dynamic data. In most
+cases based on the FE discretization, useful packages for solving the
+obtained linear system are PETSc
+\cite{petsc-user-ref,petsc-web-page,petsc-efficient} and Trilinos \cite{Trilinos}
+which are highly
+scalable linear algebra libraries providing data structures and routines
+for large-scale scientific applications modeled by partial
+differential equations. Their mechanisms are optimized for parallel
+application codes, such as parallel matrix and vector assembly
+routines and linear solving routines, and allows the user to have
+detailed control over the solution process.

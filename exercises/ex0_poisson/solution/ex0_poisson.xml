@@ -1,0 +1,20 @@
+<Param>
+  <Mesh>
+    <Filename2>unit_square-2_tri.inp</Filename2>
+    <Filename3>unit_cube.inp</Filename3>
+    <InitialRefLevel>3</InitialRefLevel>
+    <FinalRefLevel>7</FinalRefLevel>
+  </Mesh>
+  <FESpace>
+    <FeDegree>1</FeDegree>
+  </FESpace>
+  <LinearSolver>
+    <Name>CG</Name>
+    <SizeBasis>50</SizeBasis>
+    <Method>NoPreconditioning</Method>
+    <MaxIterations>1000</MaxIterations>
+    <AbsTolerance>1.0e-15</AbsTolerance>
+    <RelTolerance>1.0e-10</RelTolerance>
+    <DivTolerance>1.0e6</DivTolerance>
+  </LinearSolver>
+</Param>

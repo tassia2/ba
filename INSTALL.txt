@@ -1,0 +1,81 @@
+Prerequisites (necessary):
+
+	- c+ compilers
+		> sudo apt install build-essential
+	- openMPI
+		> sudo apt install libopenmpi-dev
+	- tinyxml 2
+		> sudo apt install libtinyxml2-dev
+	- cmake 
+		> sudo apt install cmake
+		> sudo apt install cmake-curses-gui
+	- boost
+		> sudo apt install libboost-all-dev
+	- metis
+		> sudo apt install libmetis-dev
+		
+install procedure:
+	open terminal in directory hilfow3:
+		> mkdir build
+		> cd build
+		> ccmake ../
+	press c
+	press e
+	set option CMAKE_BUILD_TYPE from "Release" to "Debug"
+	press c
+	press e
+	press g	
+	N := number of cpu cores of your computer
+		> make -j N 
+		
+running an application:
+
+	after compilation finished:
+		open a terminal inside the directory build/exercise/ex0_poisson
+		> mpirun -np N ex0_poisson
+		
+postprocessing:
+	after the simulation finished, use ParaView to read in the resulting pvtu files
+	
+
+optional external packages:
+	- git
+		> sudo apt install git
+	- Intel MKL (linear algebra routines)
+		> sudo apt install libmkl-full-dev
+	- Umfpack (direct linear solver)
+		> sudo apt install libsuitesparse-dev
+	- Mumps (parallel direct linear solver)	
+		> sudo apt install libmumps-dev
+		> sudo apt install libmumps-ptscotch-dev
+		> sudo apt install libmumps-scotch-dev
+		> sudo apt install libmumps-seq-dev
+	- hdf5
+		> sudo apt install libhdf5-openmpi-dev
+	- google performance tools (for profiling)
+		> sudo apt install libgoogle-perftools-dev
+	- hypre (linear algebra routines)
+		> sudo apt install libhypre-dev
+	- parmetis (parallel graph partitioning)
+		> sudo apt install libparmetis-dev
+	- p4est (for local mesh refinement)
+		> sudo apt install libp4est-dev
+	- blas & lapack (linear algebra routines)
+		> sudo apt install libblas-dev
+		> sudo apt install libblas64-dev
+		> sudo apt install libscalapack-openmpi-dev
+		> sudo apt install libscalapack-mpi-dev
+		> sudo apt install libopenblas-dev
+		> sudo apt install libopenblas-serial-dev
+		> sudo apt install libopenblas-openmp-dev
+		> sudo apt install libmkl-blacs-openmpi-lp64
+		> sudo apt install libmkl-blacs-openmpi-ilp64
+		> sudo apt install liblapacke-dev
+	- petsc & slecps (linear algebra routines and eigenvalue solver)
+		> sudo apt install libpetsc-complex-dev
+		> sudo apt install libpetsc-real-dev
+		> sudo apt install slepc-dev
+	- for documentation
+		> sudo apt install doxygen
+		> sudo apt install graphviz
+

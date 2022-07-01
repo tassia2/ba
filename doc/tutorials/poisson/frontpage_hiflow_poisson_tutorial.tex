@@ -1,0 +1,146 @@
+%\documentclass[a4paper]{article}
+
+%\usepackage{pgf}
+%\usepackage{graphicx}
+%\usepackage{pifont}
+%\usepackage{type1cm}
+
+\setlength{\textwidth}{14cm}
+\setlength{\oddsidemargin}{1cm}
+
+%\begin{document}
+
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcount \Z
+\Z=20
+
+%%% logos %%%
+
+%%% NUMHPC %%%
+\newlength{\numhpclogox}
+\setlength{\numhpclogox}{\paperwidth} % 20/210ths of the paperwidth
+\divide\numhpclogox by 210
+\multiply\numhpclogox by 100
+
+\newlength{\numhpclogoy}
+\setlength{\numhpclogoy}{\paperheight} % 270/297ths of the paperwidth
+\divide \numhpclogoy by 297
+\multiply \numhpclogoy by -235
+
+\newlength{\numhpclogoheight}
+\setlength{\numhpclogoheight}{\paperheight} % 270/297ths of the paperwidth
+\divide\numhpclogoheight by 297
+\multiply\numhpclogoheight by 20
+
+%%% KIT %%%
+\newlength{\kitlogox}
+\setlength{\kitlogox}{\paperwidth} % 20/210ths of the paperwidth
+\divide\kitlogox by 210
+\multiply\kitlogox by 0
+
+\newlength{\kitlogoy}
+\setlength{\kitlogoy}{\paperheight} % 270/297ths of the paperwidth
+\divide \kitlogoy by 297
+\multiply \kitlogoy by -230
+
+\newlength{\kitlogoheight}
+\setlength{\kitlogoheight}{\paperheight} % 270/297ths of the paperwidth
+\divide\kitlogoheight by 297
+\multiply\kitlogoheight by 15
+
+
+%%% EMCL %%%
+\newlength{\emcllogox}
+\setlength{\emcllogox}{\paperwidth} % 20/210ths of the paperwidth
+\divide\emcllogox by 210
+\multiply\emcllogox by 28
+
+\newlength{\emcllogoy}
+\setlength{\emcllogoy}{\paperheight} % 270/297ths of the paperwidth
+\divide \emcllogoy by 297
+\multiply \emcllogoy by -160
+
+\newlength{\emcllogoheight}
+\setlength{\emcllogoheight}{\paperheight} % 270/297ths of the paperwidth
+\divide\emcllogoheight by 297
+\multiply\emcllogoheight by 20
+
+%%% HIFLOW %%%
+\newlength{\hiflowlogox}
+\setlength{\hiflowlogox}{\paperwidth} % 20/210ths of the paperwidth
+\divide\hiflowlogox by 210
+\multiply\hiflowlogox by 28
+
+\newlength{\hiflowlogoy}
+\setlength{\hiflowlogoy}{\paperheight} % 270/297ths of the paperwidth
+\divide \hiflowlogoy by 297
+\multiply \hiflowlogoy by -160
+
+\newlength{\hiflowlogoheight}
+\setlength{\hiflowlogoheight}{\paperheight} % 270/297ths of the paperwidth
+\divide\hiflowlogoheight by 297
+\multiply\hiflowlogoheight by 33
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% NUMHPC %%%
+%%\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{\numhpclogox}{\numhpclogoy}}}]{\includegraphics[totalheight=\numhpclogoheight]{numhpc}}
+
+%%% KIT %%%
+%%\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{\kitlogox}{\kitlogoy}}}]{\includegraphics[totalheight=\kitlogoheight]{kitlogo}}
+
+%%% EMCL %%%
+\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{\hiflowlogox}{\hiflowlogoy}}}]{\includegraphics[totalheight=\hiflowlogoheight]{HF3_color}}
+
+%%% horizontal lines %%%
+\pgfline{\pgfxy(-1pt,0.1pt)}{\pgfxy(15pt,0.1pt)}
+\pgfline{\pgfxy(-1pt,-21.4pt)}{\pgfxy(15pt,-21.4pt)}
+%%\pgfline{\pgfxy(-1pt,-22.4pt)}{\pgfxy(15pt,-22.4pt)}
+
+%%% EMCL text %%%
+\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{0cm}{1cm}}}]{{\LARGE{{\bf Tutorial}}}}
+
+%%% EMCL web %%%
+\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{10.5cm}{-21.7cm}}}]{{\fontsize{13}{10}\selectfont{} http://www.hiflow3.org/}}
+
+\hspace{2cm}
+\begin{picture}(0,0)(-250,-25)
+\includegraphics[scale=.22]{emcl.pdf} 
+\end{picture}
+
+%%% author %%%
+\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{0cm}{-4cm}}}]{{
+\begin{parbox}{13cm}{
+\begin{center}\fontsize{12}{30}\selectfont{} E. Ketelaer, S. Ronn\aa s, A. Helfrich-Schkarbanenko, C. Straub
+\end{center}}
+\end{parbox}}}
+
+%%% title %%%
+\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{0cm}{-7.5cm}}}]{{
+\begin{parbox}{13cm}{
+%%\begin{center}\fontsize{18}{30}\selectfont{} \bf Using HiFlow$^3$ for solving the
+\begin{center}\fontsize{22}{30}\selectfont{} \bf Dirichlet Boundary Value Problem\\ for Poisson Equation
+\end{center}}
+\end{parbox}}}
+
+%%% date %%%
+\pgftext[bottom, left, at={\pgfpointadd{\pgfpoint{0pt}{0pt}}{\pgfpoint{0cm}{-16.4cm}}}]{{
+\begin{parbox}{13cm}{
+\begin{center}\fontsize{12}{24}\selectfont{} 
+\vspace{5cm}
+\textit{modified on \today}\\ 
+\vspace{6.5cm}
+\hspace{6cm}\textit{Version 1.3}
+\end{center}}
+\end{parbox}}}
+
+%fhfh \hfill sjdh
+
+%\end{document}

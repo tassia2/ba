@@ -1,0 +1,37 @@
+sudo apt install libopenmpi-dev
+sudo apt install build-essential
+sudo apt install libtinyxml2-dev
+sudo apt install git
+sudo apt install cmake
+sudo apt install cmake-curses-gui
+sudo apt install libboost-all-dev
+sudo apt install libmkl-full-dev
+sudo apt install libsuitesparse-dev
+sudo apt install libmumps-dev
+sudo apt install libmumps-ptscotch-dev
+sudo apt install libmumps-scotch-dev
+sudo apt install libmumps-seq-dev
+sudo apt install libmetis-dev
+sudo apt install libhdf5-openmpi-dev
+sudo apt install libgoogle-perftools-dev
+sudo apt install libhypre-dev
+sudo apt install libparmetis-dev
+sudo apt install libp4est-dev
+sudo apt install libblas-dev
+sudo apt install libblas64-dev
+sudo apt install libscalapack-openmpi-dev
+sudo apt install libscalapack-mpi-dev
+sudo apt install libpetsc-complex-dev
+sudo apt install libpetsc-real-dev
+sudo apt install slepc-dev
+sudo apt install libopenblas-dev
+sudo apt install libopenblas-serial-dev
+sudo apt install libopenblas-openmp-dev
+sudo apt install libmkl-blacs-openmpi-lp64
+sudo apt install libmkl-blacs-openmpi-ilp64
+sudo apt install liblapacke-dev
+sudo apt install doxygen
+sudo apt install graphviz
+
+header only:
+VCL: https://github.com/vectorclass/version2

@@ -1,0 +1,244 @@
+% euler - lagrange
+\newcommand{\lagX}{\mathbf{X}}
+\newcommand{\eulX}{\mathbf{x}}
+\newcommand{\lag}[1]{\widehat{#1}}
+
+\newcommand{\code}[1]{\textsf{#1}}
+\newcommand{\x}{x}
+\newcommand{\X}{\hat{x}}
+
+% general
+\newcommand{\ten}[1]{\underline{\mathbf{#1}}}
+\newcommand{\refeq}[1]{(\ref{#1})}
+\newcommand{\rg}{\text{rg}}
+\newcommand{\Id}{\mathds{1}}
+
+\newcommand{\jump}[1]{[\![ #1 ]\!]}
+\newcommand{\jumpX}[2]{[\![ #1 ]\!]_{#2}}
+\newcommand{\ave}[1]{\{\!\!\{ #1 \}\!\!\}}
+\newcommand{\save}[1]{\langle\!\langle #1 \rangle\!\rangle}
+
+% domain
+\newcommand{\A}[1]{#1^{\scriptscriptstyle(1)}}
+\newcommand{\B}[1]{#1^{\scriptscriptstyle(2)}}
+\newcommand{\I}[1]{#1^{\scriptscriptstyle(i)}}
+
+\newcommand{\domain}{\Omega}
+\newcommand{\overlap}{\domain_\delta}
+\newcommand{\domainA}{\A{\domain}}
+\newcommand{\domainB}{\B{\domain}}
+\newcommand{\domainG}{\domain_{gh}}
+\newcommand{\domainAo}{\domainA_{\delta}}
+\newcommand{\domainBo}{\domainB_{\delta}}
+\newcommand{\domainAf}{\domainA_{*}}
+\newcommand{\domainBf}{\domainB_{*}}
+
+% mesh
+\newcommand{\iface}{\Gamma_{12}}
+\newcommand{\bdy}{\Gamma}
+\newcommand{\bdyD}{\Gamma_{D}}
+\newcommand{\bdyDA}{\Gamma^{(1)}_{D}}
+\newcommand{\bdyDB}{\Gamma^{(2)}_{D}}
+\newcommand{\bdyN}{\Gamma_{N}}
+\newcommand{\bdyNA}{\Gamma^{(1)}_{N}}
+\newcommand{\bdyNB}{\Gamma^{(2)}_{N}}
+\newcommand{\cell}{K}
+\newcommand{\cellM}{K_{+}}
+\newcommand{\cellS}{K_{-}}
+\newcommand{\facet}{e}
+\newcommand{\nBdy}{\vec{n}}
+\newcommand{\nFacet}{\vec{n}_{\facet}}
+\newcommand{\nCell}{\vec{n}_{\cell}}
+\newcommand{\nCellM}{\vec{n}_{\cellM}}
+\newcommand{\nCellS}{\vec{n}_{\cellS}}
+\newcommand{\nIface}{\vec{n}_{12}}
+
+\newcommand{\triang}{\mathcal{T}}
+\newcommand{\triangA}{\mathcal{T}^{(1)}}
+\newcommand{\triangB}{\mathcal{T}^{(2)}}
+\newcommand{\triangG}{\mathcal{T}_{gh}}
+\newcommand{\facets}{\mathcal{E}}
+\newcommand{\facetsInt}{\mathcal{E}_{0}}
+\newcommand{\facetsIface}{\mathcal{E}_{12}}
+\newcommand{\facetsIntA}{\mathcal{E}^{(1)}_{0}}
+\newcommand{\facetsIntB}{\mathcal{E}^{(2)}_{0}}
+\newcommand{\facetsIntI}{\mathcal{E}^{(i)}_{0}}
+\newcommand{\facetsGA}{\mathcal{E}^{(1)}_{gh}}
+\newcommand{\facetsGB}{\mathcal{E}^{(2)}_{gh}}
+\newcommand{\facetsGI}{\mathcal{E}^{(i)}_{gh}}
+\newcommand{\facetsBdy}{\mathcal{E}_{b}}
+\newcommand{\facetsBdyD}{\mathcal{E}_{D}}
+\newcommand{\facetsBdyDA}{\mathcal{E}^{(1)}_{D}}
+\newcommand{\facetsBdyDB}{\mathcal{E}^{(2)}_{D}}
+\newcommand{\facetsBdyN}{\mathcal{E}_{N}}
+\newcommand{\facetsBdyNA}{\mathcal{E}^{(1)}_{N}}
+\newcommand{\facetsBdyNB}{\mathcal{E}^{(2)}_{N}}
+
+% FE space
+\newcommand{\FE}{\mathcal{V}_{h,k,c}}
+\newcommand{\CG}[1]{\mathcal{V}_{h,#1, cg}}
+\newcommand{\DG}[1]{\mathcal{V}_{h,#1, dg}}
+\newcommand{\HDIV}[1]{\mathcal{V}_{h,#1, div}}
+\newcommand{\VELh}{\mathbf{V}_h}
+\newcommand{\PREh}{Q_h}
+
+% integration
+\newcommand{\dx}{\,\text{d}\mathbf{x}}
+\newcommand{\dX}{\,\text{d}\mathbf{X}}
+\newcommand{\dsig}{\,\text{d}\sigma}
+\newcommand{\dS}{\,\text{d}S}
+\newcommand{\dV}{\,\text{d}V}
+
+% physical quantities
+\newcommand{\force}{\mathbf{f}}
+\newcommand{\grav}{\mathbf{e}_g}
+\newcommand{\dis}{\mathbf{u}}
+\newcommand{\Dis}{\widehat{\mathbf{u}}}
+\newcommand{\vel}{\mathbf{v}}
+\newcommand{\pre}{p}
+\newcommand{\sigF}[1]{\ten{\sigma}^{fl}_{#1}}
+\newcommand{\sigS}{\ten{\sigma}_s}
+\newcommand{\sigA}{\A{\ten{\sigma}}}
+\newcommand{\sigB}{\B{\ten{\sigma}}}
+\newcommand{\sigSL}[1]{\ten{\sigma}^{lin}_{#1}}
+\newcommand{\sigSI}[1]{\ten{\sigma}^{inh}_{#1}}
+\newcommand{\sigSV}[2]{\ten{\sigma}^{vk}_{#1,#2}}
+\newcommand{\sigSv}{\ten{\sigma}_{s,\vel}}
+\newcommand{\sigSp}{\ten{\sigma}_{s,\pre}}
+\newcommand{\sigSu}{\ten{\sigma}_{s,\dis}}
+
+\newcommand{\rhoA}{\A{\rho}}
+\newcommand{\rhoB}{\B{\rho}}
+\newcommand{\muA}{\A{\mu}}
+\newcommand{\muB}{\B{\mu}}
+
+% trial and test function
+\newcommand{\vj}{\mathbf{v}}
+\newcommand{\vi}{\psi_\mathbf{\vj}}
+\newcommand{\wj}{\mathbf{w}}
+\newcommand{\wi}{\psi_\mathbf{\wj}}
+\newcommand{\uj}{\mathbf{u}}
+\newcommand{\ui}{\psi_\mathbf{\uj}}
+\newcommand{\prj}{p}
+\newcommand{\pri}{\psi_p}
+
+% parameters
+\newcommand{\deltaSdeform}{\delta_{s,\sigma}}
+\newcommand{\deltaSproj}{\delta_{s,pr}}
+\newcommand{\deltaSlin}{\delta_{s,lin}}
+\newcommand{\deltaSinh}{\delta_{s,inh}}
+\newcommand{\deltaDGI}{\I{\delta_{dg}}}
+\newcommand{\deltaDGA}{\A{\delta_{dg}}}
+\newcommand{\deltaDGB}{\B{\delta_{dg}}}
+
+\newcommand{\stab}{\gamma}
+\newcommand{\stabSvisc}{\stab_{s,\mu}}
+
+\newcommand{\stabBCSym}{\stab_{bc,s}}
+\newcommand{\stabBCPenF}{\stab_{bc,p,f}}
+\newcommand{\stabBCPenS}{\stab_{bc,p,s}}
+\newcommand{\stabCutSym}{\stab_{c,s}}
+\newcommand{\stabCutPSym}{\stab_{c,p,s}}
+\newcommand{\stabCutPen}{\stab_{c,p}}
+\newcommand{\stabCIPP}{\stab_{ip,p}}
+\newcommand{\stabGhP}{\stab_{gh,p}}
+\newcommand{\stabGhV}{\stab_{gh,v}}
+
+\newcommand{\stabDGSym}{\stab_{dg,s}}
+\newcommand{\stabDGPen}{\stab_{dg,v}}
+\newcommand{\stabDIPP}{\stab_{dg,p}}
+
+%% diff operators
+\newcommand{\D}{\textrm{D}}
+\newcommand{\grad}{\nabla}
+%\newcommand{\grad}{\textrm{grad}~}
+\newcommand{\diver}{\nabla \cdot }
+%\newcommand{\diver}{\textrm{div}~}
+\newcommand{\rot}{\nabla \times}
+%\newcommand{\rot}{\textrm{rot}~}
+\DeclareMathOperator{\dive}{div}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newcommand{\nline}{$\;$\newline}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\OK}[1]{\textcolor{green}{#1}}
+\newcommand{\recall}[1]{\textcolor{orange}{#1}}
+\newcommand{\visc}[1]{\textcolor{black}{#1}}
+
+\newcommand{\lsim}{\mathrel{\raisebox{1pt}{\stackunder{$<$}{\rotatebox{-27}{\resizebox{6.5pt}{2pt}{$\boldsymbol{\sim}$}}}}}}
+
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\reald}[1]{\mathbb{R}^{#1}}
+\newcommand{\realp}{[0,\infty)}
+
+\newcommand{\linop}[1]{\mathcal{L}(#1)}
+\newcommand{\linopXY}[2]{\mathcal{L}(#1,#2)}
+\newcommand{\dual}[1]{#1^{*}}
+\newcommand{\bidual}[1]{#1^{**}}
+
+\newcommand{\norme}{\|\cdot\|}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\normX}[2]{\|#1\|_{#2}}
+\newcommand{\semi}[1]{\|\nabla #1\|}
+\newcommand{\semidiff}[2]{\|\nabla \left( #1 - #2 \right)\|}
+\newcommand{\semiX}[2]{|#1|_{#2}}
+\newcommand{\abs}[1]{|#1|}
+
+
+\newcommand{\skape}{\left(\cdot,\cdot\right)}
+\newcommand{\skap}[2]{\left(#1,#2\right)}
+\newcommand{\skapX}[3]{\left(#1,#2\right)_{#3}}
+
+
+\newcommand{\adj}[1]{#1^{*}}
+\newcommand{\iadj}[1]{#1^{-*}}
+\newcommand{\dprod}[2]{\langle #1,#2 \rangle}
+\newcommand{\dprodX}[3]{\langle #1,#2 \rangle_{#3}}
+
+\newcommand{\ball}[3]{B_{#1}\left(#2, #3\right)}
+
+
+\newcommand{\weak}{\rightharpoonup}
+\newcommand{\weakstar}{\stackrel{*}{\rightharpoonup}}
+
+\newcommand{\parent}{\mathcal{P}}
+\newcommand{\children}{\mathcal{C}}
+\newcommand{\child}[1]{\mathcal{C}_{#1}}
+
+
+
+\newcommand{\heuinter}{\Pi_{\fempart}}
+\newcommand{\nodalinter}{\mathcal{I}_{\fempart}}
+
+\newcommand{\kg}[1]{\text{ kg}^{#1}}
+\newcommand{\mmeter}[1]{\text{ mm}^{#1}}
+\newcommand{\cmeter}[1]{\text{ cm}^{#1}}
+\newcommand{\meter}[1]{\text{ m}^{#1}}
+\newcommand{\second}[1]{\text{ s}^{#1}}
+\newcommand{\kelvin}[1]{\text{ K}^{#1}}
+\newcommand{\volt}[1]{\text{ V}^{#1}}
+\newcommand{\hertz}[1]{\text{ Hz}^{#1}}
+\newcommand{\ampere}[1]{\text{ A}^{#1}}
+
+\newcommand{\equalhat}{\;\widehat{=}\;}
+\newcommand{\sectionspace}{\nline\nline}
+
+\newcommand{\blankpage}{\newpage\null\thispagestyle{empty}\newpage}

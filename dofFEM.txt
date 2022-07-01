@@ -1,0 +1,42 @@
+DofFEM
+
+Bugs
+	- facet visualization
+	- parcom allreduce (sum)
+	- einige test laufen nicht
+	- MPI Bug in correct_dofs: auf bwforprod cluster
+  - TEHD: DecoupledSolver: kovergenzrate zu niedrig. evtl Problem mit BC
+  - ilupp + hypre LA -> NaN
+	
+Software Design
+	- Templateisierung einheitlicher
+	- visualisierung in nonlinear solver -> wie apply filter
+	- MPI Routinen durch Parcom ersetzen
+	- header only: CG, GMRES; FGMRES, BiCGStab
+	- merge mit master
+  
+Performance
+	- alternative zu iv2ind?
+	- Vergleich mit alter Implementierung
+	- Profiling
+	- Domain Decomposition mit Metis suboptimal
+	- init lag für p > 2 dauer sehr lagne -> patch mode in fe intermap
+	- template statt boost__function in assembler
+	- assembly of error indicators
+	
+Features
+	- RT und BDM für Tetraeder
+	- NaturalConvection Example 
+		- slip & friction BC
+		- upwinding
+		- zu MIT Benchmark ausbauen
+	- Hybrid DG
+	- hessian piola transform
+	
+Kompatibilität
+	- examples
+	- Pyramids Lagrange
+  
+Unit-Tests:
+  - extrhiere matrix format aus CoupledMatrix, HypreMatrix
+  

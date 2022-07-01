@@ -1,0 +1,29 @@
+set(quadrature_SOURCES
+  mapped_quadrature_type.cc
+  quadraturetype.cc
+  qgausstetrahedron.cc
+  quadrature.cc
+  qgausshexahedron.cc
+  qeconomicalgausshexahedron.cc
+  qgausstriangle.cc
+  qgaussquadrilateral.cc
+  qeconomicalgaussquadrilateral.cc
+  qgaussline.cc
+  qgausspyramid.cc
+  )
+
+set(quadrature_PUBLIC_HEADERS 
+  mapped_quadrature_type.h
+  quadrature.h
+  quadrature_factory.h
+  quadraturetype.h
+  custom_quadrature_type.h
+  qgausstetrahedron.h
+  qgausshexahedron.h
+  qeconomicalgausshexahedron.h
+  qgausstriangle.h
+  qgaussquadrilateral.h
+  qeconomicalgaussquadrilateral.h
+  qgaussline.h
+  qgausspyramid.h
+  )

@@ -1,0 +1,13 @@
+\section{Optimization}
+\subsection{Function Calls}
+\begin{enumerate}
+\item avoid call-by-value for non-built-in types.  Use reference or pointers instead: \code{void functionXY(int a, T\& b)} or \code{void functionXY(int a, T* b)} instead of \code{void functionXY(int a, T b)}
+\item use \code{const} for reference input variables, that are not changed inside the function: \code{void functionXY(int a, const T\& b)} instead of 
+\code{void functionXY(int a, T\& b)} 
+\item avoid return values for non-built-in types in performance critical parts. Instead, pass output object by reference: \code{void functionXY(int a, T\& b)} instead of \code{T functionXY(int a)}  
+\end{enumerate}
+\subsection{Memory Allocation}
+Dynamic memory allocation is expensive. Mind this fact every time you use \code{new} or initializing a \code{std::vector}, or other STL containers.
+\begin{enumerate}
+\item try to avoid dynamic memory allocation inside loops. Instead, initialize the variables outside the loop and call \code{clear}.
+\end{enumerate}

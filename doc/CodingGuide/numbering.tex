@@ -1,0 +1,28 @@
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{algorithm}[lemma]{Algorithm}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{problem}[lemma]{Problem}
+\newtheorem{assumption}[lemma]{Assumption}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{inequality}{Useful inequalities, No}
+\newtheorem*{statement}{$\;$}
+
+\theoremstyle{definition}
+
+\newtheorem{remarkx}[lemma]{Remark}
+\theoremstyle{remark}
+\newenvironment{remark}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\remarkx}
+  {\popQED\endremarkx}
+
+\newtheorem{examplex}[lemma]{Example}
+\theoremstyle{remark}
+\newenvironment{example}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}
+  {\popQED\endexamplex}  
+  
+\numberwithin{equation}{section}

@@ -1,0 +1,152 @@
+\section{Numerical Simulation in Urban Environments}
+As an illustration of the methodology of applying mathematical modeling,
+numerical simulation and scientific visualization for complex simulations
+made possible by \hiflow{}, we present the Karlsruhe Geometry project
+which performs numerical simulations in an urban environment in
+collaboration with the city council of Karlsruhe, Germany.  Using the increasing
+detail of three dimensional city models, more reliable simulations are
+feasible, for example concerning airflow, fine-dust or noise distribution
+in the very environment that we live in.
+
+This section describes an example of airflow around the
+Department of Mathematics of the Karlsruhe Institute of
+Technology, in order to illustrate how the components
+of \hiflow{} are combined into a simulation.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.45\textwidth,height=0.253\textwidth]{fig/simulationen-im-karlsruher-stadtmodell-2-schrift}
+  %\hspace{1em}
+  \includegraphics[width=0.45\textwidth,height=0.253\textwidth]{fig/simulationen-im-karlsruher-stadtmodell-klein-schrift}
+  \caption{Geometry used for the simulation and a visualization of simulation results.}
+  \label{fig:KarlsruheGeometry}
+\end{figure}
+
+\subsection{Problem Formulation}
+The instationary Navier-Stokes equations are solved in a box
+surrounding the buildings of the Kronenplatz square. As boundary
+conditions, a simple Poiseuille profile is used on one side
+$\Gamma_{in}$, and natural do-nothing boundary conditions are used on
+the opposite side $\Gamma_{out}$. On the remaining boundaries,
+including the walls of the buildings, the velocity is set to zero. The
+model is formulated as an initial boundary value problem for the
+velocity $\vec{u}\left(\vec{x}, t\right)$ and the pressure
+$p\left(\vec{x}, t\right)$ in Equation \ref{eq:NS_stark_instat}.
+
+\begin{equation}
+  \begin{aligned}
+    \partial_t{\vec{u}} - \nu \Delta \vec{u} + \left(\vec{u} \cdot \nabla \right) \vec{u} + \nabla p & = 0 & \left(\vec{x}, t\right) \in \Omega \times \left(0,T\right)\ ,\\
+    \nabla \cdot \vec{u} & = 0 & \left(\vec{x}, t\right) \in \Omega \times \left(0,T\right)\ ,\\ 
+    \vec{u} & = \vec{u}^{in} & \left(\vec{x}, t\right) \in \Gamma_{\text{in}} \times \left(0,T\right)\ ,\\ 
+    \left(-\mathcal{I} p + \nu \nabla \vec{u} \right) \cdot \vec{n} & = 0 & \left(\vec{x}, t\right) \in \Gamma_{\text{out}} \times \left(0,T\right)\ ,\\ 
+    \vec{u} & = 0  & \left(\vec{x}, t\right) \in \Gamma \times \left(0,T\right)\ ,\\
+    \vec{u}\left(\vec{x}, 0\right) & = \vec{u}_0\left(\vec{x}\right) &\vec{x} \in \Omega\ .
+    \label{eq:NS_stark_instat}      
+  \end{aligned}  
+\end{equation}   
+
+\subsection{Implementation of the Navier-Stokes Solver}
+
+Equation \ref{eq:NS_stark_instat} is discretized first in time, and
+then in space. For the time discretization, the fractional step
+$\theta$-scheme is used, and in space $Q_2-Q_1$ (``Taylor-Hood'')
+finite elements~\cite{brennerscott2002}. % TODO check reference for fractional-step method: TurekRHG06
+Due to the nonlinearity
+$\left(\vec{u} \cdot \nabla \right) \vec{u}$ each timestep is resolved
+with the exact Newton algorithm. This involves solving a linearized
+problem iteratively, which is done using the GMRES method
+preconditioned by the ILU++ \cite{iluplusplus} preconditioner. Overall,
+the computation is structured as in Algorithm~\ref{algo:inst_ns}, with
+the supporting modules indicated in parentheses.
+
+\begin{algorithm}
+  \caption{Overall structure of the instationary Navier-Stokes simulation}
+  \label{algo:inst_ns}
+  \begin{algorithmic}
+    \Function{solve\_instationary\_navier\_stokes}{mesh\_filename}
+    \State Read mesh and distribute to all processors (Mesh).
+    \State Number the DoFs using a Q2-Q1 finite element space (DoF/FEM).
+    \State Create the system matrix, residual vector and solution vector (Linear Algebra).
+    \State Initialize the solution vector with initial solution 0.
+    \State Set the DoF values on the inflow boundary to the values prescribed by $\vec{u}^{in}$.
+    \While{$t < T$}
+      \For{$s = 1,2,3$}
+        \State Solve nonlinear problem for substep $s$ to obtain $\left(\vec{u}^{n,s}, p^{n,s}\right)$.
+      \EndFor
+    \State $t = t + \Delta{}t$
+    \State Visualize the solution at timestep $t$
+    \EndWhile
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+%
+The nonlinear solution algorithm is encapsulated in the class
+\code{Newton} which implements an abstract interface
+\code{NonlinearSolver}. This has a reference to an object which
+implements the functions \code{EvalGrad} and \code{EvalFunc} that
+compute the system matrix and the residual vector, respectively. These
+two functions use the assembly functionality described in
+Section~\ref{sec:assembly}. The \code{NonlinearSolver} contains a
+reference to a linear solver of type \code{GMRES}, which is used in each step to compute
+the update for the current linearization point.
+
+The local assembly of the linearized variational formulation is
+implemented in a class \code{InstationaryFlowAssembler}. The state of
+this class depends on the current substep in the timestepping method,
+as well as the solutions corresponding to the linearization point in
+the Newton method and the previous timestep. This problem-specific
+code is relatively long, but easy to write once the corresponding
+variational form has been derived analytically.
+
+This example illustrates the interplay between reusable software
+components, provided in the \hiflow{} library through the three core 
+modules, and the problem-specific code that must be implemented
+specifically for each individual solver. In this case, the Mesh module
+provides the functionality for reading in and distributing the
+computational mesh; the DoF/FEM module computes the DoF numbering, and
+is also used in the assembly of the system matrix and residual; and
+the Linear Algebra module provides management of matrices and vectors,
+as well as an iterative method to solve the linear system. Abstract
+interfaces are used in several places, both for implementing callbacks
+for the components in the library, such as for the nonlinear solver;
+and for facilitating the exchange of components, as with the
+concrete linear and nonlinear solvers (GMRES and Newton).
+
+
+%%% NOT USED - but maybe we need it some day?
+% For the time discretization, a
+% fractional step $\theta$-scheme method is used, in which each timestep
+% in split into three substeps. The PDE:s solved when advancing from
+% timestep $t_n$ to timestep $t_{n+1}$ are detailed in Equations
+% \ref{eq:substep1} - \ref{eq:substep3}, where the operator
+% $A\left(\vec{u}\right) = -\nu\Delta{} +
+% \left(\vec{u}\cdot{}\nabla{}\right)$ has been introduced to shorten the notation.
+
+% \begin{equation}
+%   \begin{aligned}
+%     \left(\mathcal{I} + \tilde{\theta}A\left(\vec{u}^{n+\theta}\right)\right)\vec{u}^{n+\theta} + \nabla{}p^{n+\theta} 
+%     & = & \left(\mathcal{I} - \gamma\theta\Delta{t}A\left(\vec{u}^{n}\right)\right)\vec{u}^{n} \\
+%     \nabla \cdot \vec{u^{n+\theta}} & = & 0
+%     \end{aligned}
+%     \label{eq:substep1}
+% \end{equation}
+% \begin{equation}
+%   \begin{aligned}
+%     \left(\mathcal{I} + \tilde{\theta}A\left(\vec{u}^{n+1-\theta}\right)\right)\vec{u}^{n+1-\theta} + \nabla{}p^{n+1-\theta} 
+%     & = & \left(\mathcal{I} - \beta\theta\prime\Delta{t}A\left(\vec{u}^{n+\theta}\right)\right)\vec{u}^{n+\theta} \\
+%     \nabla \cdot \vec{u^{n+1-\theta}} & = & 0
+%     \end{aligned}
+%     \label{eq:substep2}
+% \end{equation}
+% \begin{equation}
+%   \begin{aligned}
+%     \left(\mathcal{I} + \tilde{\theta}A\left(\vec{u}^{n+1}\right)\right)\vec{u}^{n+1} + \nabla{}p^{n+1} 
+%     & = & \left(\mathcal{I} - \gamma\theta\Delta{t}A\left(\vec{u}^{n+1-\theta}\right)\right)\vec{u}^{n+1-\theta} \\
+%     \nabla \cdot \vec{u^{n+1}} & = & 0
+%     \end{aligned}
+%     \label{eq:substep3}
+% \end{equation}
+
+% The parameter $\theta$ is chosen as $\theta = 1-\frac{\sqrt{2}}{2}$,
+% and the other coefficients introduced are related as follows:
+% $\theta\prime = 1-2\theta$, $\beta = \frac{\theta\prime}{1-\theta}$

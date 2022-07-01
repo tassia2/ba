@@ -1,0 +1,10 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}How to Use the Tutorial?}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Using HiFlow$^3$}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}Linear Algebra Module}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}The Global Inter-Node MPI-level}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Local On-Node Level}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Different Backends on the Global-level}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Parameter File}{10}{subsection.2.4}
+\contentsline {section}{\numberline {3}GPU Clusters}{11}{section.3}

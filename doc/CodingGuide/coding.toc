@@ -1,0 +1,13 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Naming Conventions}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Classes, functions and variables}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Optimization}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Function Calls}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Memory Allocation}{1}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Class Design}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Constructors, destructors}{1}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Public, protected, private}{1}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Inheritance}{1}{subsection.3.3}%
+\contentsline {section}{\numberline {4}C++11 and beyond Features}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}auto}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Pointers}{2}{subsection.4.2}%

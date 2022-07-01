@@ -1,0 +1,27 @@
+Before computing the electrical potential $u$ caused by the current density source $f$ we illustrate the transfer from the analytical forward operator $\Lambda$ to its numerical discretization $\boldsymbol{\Lambda}$. Note that we denote matrices and vectors by bold letters. Starting with
+%
+\begin{equation*}
+	\Lambda:\,\left\{\begin{array}{ccc}
+	L^2(\Omega) &\to &H^1(\Omega),\\
+	f &\mapsto &u,
+\end{array}\right.
+\end{equation*}
+%
+and substituting $u$ by its discretization $u_h=\sum^n_{i=1}u_i\varphi_i\in H^1_h(\Omega)$ and $f$ by $f_h=\sum^n_{i=1}f_i\varphi_i\in H^1_h(\Omega)$ yields the discrete forward operator
+%
+\begin{equation*}
+	\Lambda_h:\,\left\{\begin{array}{ccc}
+	L^2_h(\Omega) &\to &H^1_h(\Omega),\\
+	f_h &\mapsto &u_h.
+\end{array}\right.
+\end{equation*}
+%
+Using the koeffizients of the linearkombination in vector notation $\boldsymbol{u}=(u_1,\ldots,u_n)^\top$ and $\boldsymbol{f}=(f_1,\ldots,f_n)^\top$ we get the discrete forward operator in matrixform
+%
+\begin{equation*}
+	\boldsymbol{\Lambda}:\,\left\{\begin{array}{ccc}
+	\mathbb{R}^n &\to &\mathbb{R}^n,\\
+	\boldsymbol{f} &\mapsto &\boldsymbol{u}.
+\end{array}\right.
+\end{equation*}
+%

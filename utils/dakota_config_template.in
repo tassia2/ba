@@ -1,0 +1,94 @@
+# Copyright (C) 2011-2021 Vincent Heuveline
+#
+# HiFlow3 is free software: you can redistribute it and/or modify it under the
+# terms of the European Union Public Licence (EUPL) v1.2 as published by the
+#/ European Union or (at your option) any later version.
+#
+# HiFlow3 is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the European Union Public Licence (EUPL) v1.2 for more
+# details.
+#
+# You should have received a copy of the European Union Public Licence (EUPL) v1.2
+# along with HiFlow3.  If not, see <https://joinup.ec.europa.eu/page/eupl-text-11-12>.
+
+################################################################################
+# Dakota Input File Template for non-intrusive UQ simulations with Hiflow3
+# =================================================
+#
+# For applying Dakota to HiFlow3
+# See Advanced Simulation Code Interfaces chapter in Dakota's User's Manual
+#
+# Author Jonas Kratzke
+################################################################################
+
+### After adaption to your own application run with 
+### dakota -i dakota_config.in -o dakota_results.out
+
+### Show the UQ progress in a graphical way
+environment
+  graphics
+
+### Define the UQ method
+method
+  stoch_collocation
+    ### Choose accuracy
+    sparse_grid_level = 1
+    ### For creating the statistics 
+    samples_on_emulator = 10000
+  ### Alternatives:
+  # polynomial_chaos
+    ### Choose accuracy
+    # quadrature_order = 3
+    # samples_on_emulator = 10000
+  # sampling
+    ### Standard Monte Carlo sampling
+    # sample_type random
+    ### Latin Hypercube sampling
+    # sample_type lhs
+    ### Choose accuracy
+    # samples = 50
+
+### Using a single interface instance to map variables into responses
+model
+  single
+
+### Define random input variables
+variables
+  ### Choose input distribution, i.e. uniform:
+  uniform_uncertain = 2
+    lower_bounds = 0.5 2.0 
+    upper_bounds = 1.5 4.0
+    ### in the hiflow_params_template.xml file
+    ### use {uq_param1} and {uq_param2} as placeholder
+    descriptors = 'uq_param1' 'uq_param2'
+
+  ### Choose input distribution, e.g. lognormal:
+  # lognormal_uncertain = 2
+    # means             =  1.   2.
+    # std_deviations    =  0.5  0.7
+    # descriptors       = 'uq_param1' 'uq_param2'
+
+### Define the interface to the simulation
+interface
+  fork
+    ### Set your simulation wrapper
+    analysis_driver = 'dakota_simulator_script_template'
+    ### Temporary input and output files for each simulation run
+    parameters_file = 'params.in'
+    results_file    = 'results.out'
+    ### Configuring temporary work directory
+    work_directory directory_tag
+    ### Your hiflow_params_template.xml file should be placed in this folder
+    copy_files = 'template/*'
+    ### uncomment to keep the work directories of all simulation runs,
+    ### including the params.in and results.out files
+    # named 'workdir' file_save directory_save
+
+### Define the response to Dakota to create statistics on the 
+### Quantities of Interest
+responses
+  ### Number of Quantities of Interest
+  response_functions = 1
+  no_gradients
+  no_hessians
